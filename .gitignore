@@ -1,0 +1,8 @@
+# bootstrap directory
+public/bootstrap-4.1.1-dist
+
+# jQuery directory for bootstrap
+public/jquery
+
+# node directory
+node_modules

@@ -1,0 +1,25 @@
+<% include ../partials/header %>
+
+<div class="login-container container-fluid">
+    <div class="row justify-content-center">
+        <h1 class="login-h1">Add a city</h1>
+    </div>
+    <div class="row justify-content-center ">
+        <form action= "/posts" method="POST">
+            <div class="form-group">
+                <input class="form-control" type="text" name="title" placeholder="Post Title">
+            </div>
+            <div class="form-group">
+                <input class="form-control" type="text" name="image" placeholder="Item Image">
+            </div>
+            <div class="form-group">
+                <input class="form-control" type="text" name="description" placeholder="Description">
+            </div>
+            <div class="form-group comment-btn">
+                <button class="btn btn-light-gray-2 btn-lg btn-block">Submit</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<% include ../partials/footer %>

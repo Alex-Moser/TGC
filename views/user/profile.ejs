@@ -1,0 +1,68 @@
+<% include ../partials/header %>
+
+<div class="container">
+    <h1 class="jumbotron light-green-bg">
+        <!-- Capitalizes first letter of username -->
+        <%=user.username.replace(/^\w/,c => c.toUpperCase())%>'s Profile
+        <% if(currentUser && user.equals(currentUser._id)){ %>
+            <a class="btn btn-light-gray" href="/profile/<%=user._id%>/mymessages">
+                View My Messages
+            </a>
+        <% } else { %>
+        <a class="btn btn-light-gray-2b" href="/profile/<%=user._id%>/message">
+            Message <%=user.username.replace(/^\w/,c => c.toUpperCase())%>!
+        </a>
+        <% } %>
+    </h1>
+
+    <div class="row">
+        <div class="col-lg-6">
+            <ul class="list-group shadow">
+                <li class="list-group-item list-group-item-gray">
+                    Location:
+                </li>
+                <li class="list-group-item list-group-item-gray">
+                    Member since: <%= jdate %>
+                </li>
+                <li class="list-group-item list-group-item-gray">
+                    Last Online: <%=onlineDate%>
+                </li>
+                <li class="list-group-item list-group-item-gray">
+                    Short Bio:
+                </li>
+            </ul>
+        </div>
+        <div class="col-lg-6">
+            <ul class="list-group shadow">
+                <li class="list-group-item list-group-item-gray">
+                    Community Rating:
+                </li>
+                <li class="list-group-item list-group-item-gray">
+                    Total Items Purchased:
+                    <%= user.transaction_history.purchases.length %>
+                </li>
+                <li class="list-group-item list-group-item-gray">
+                    Total Items Sold:
+                    <%= user.transaction_history.sales.length %>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="row">
+
+        <% posts.forEach(function(post){ %>
+            <div class="col-lg-3 col-md-4 col-sm-6">
+                <div class="card index-card">
+                    <img src="<%= post.image %>">
+                    <div class="card-body">
+                        <h5><%= post.title %></h5>
+                        <a href="/posts/<%=post._id %>"
+                        class="btn btn-light-gray-2">More Info</a>
+                    </div>
+                </div>
+            </div>
+        <% }); %>
+    </div>
+</div>
+
+<% include ../partials/footer %>

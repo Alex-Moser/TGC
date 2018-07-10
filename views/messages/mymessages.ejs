@@ -1,0 +1,40 @@
+<% include ../partials/header %>
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg">
+            <h1>Your Messages</h1>
+        </div>
+    </div>
+    <% user.conversations.forEach(function(conversation){ %>
+        <div class="row">
+            <div class="col-lg">
+                <p>
+                    <!-- Link to each conversation. -->
+                    <a class="conv-msg" href="/profile/<%=user._id%>/mymessages/<%=conversation._id%>">
+                        <!-- Print name and last message text of each conversation -->
+                        <% if (conversation.sender._id.equals(user._id)) { %>
+
+                            <%= conversation.receiver.username %>
+                            &nbsp-&nbsp
+                            <%= conversation.last_message.text %>
+
+                        <% } else { %>
+
+                                <%= conversation.sender.username %>
+                                &nbsp-&nbsp
+                                <%= conversation.last_message.text %>
+
+                        <% } %>
+                    </a>
+                </p>
+
+            </div>
+
+        </div>
+    <% });%>
+
+
+</div>
+
+<% include ../partials/footer %>

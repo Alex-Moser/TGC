@@ -1,0 +1,23 @@
+<% include ../partials/header %>
+
+<div class="container">
+    <div class="form">
+        <div class="form-group">
+            <form action="/profile/<%= recipient._id %>/message"
+                  method="POST">
+
+                <label for="messageTextArea">
+                    Your message to:  <b><%= recipient.username %></b>
+                </label>
+                <textarea class="form-control"
+                          id="messageTextArea"
+                          name=text
+                          rows="6"></textarea>
+
+                <button class="btn btn-outline-gray">Send Message</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<% include ../partials/footer %>

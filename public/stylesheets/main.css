@@ -1,0 +1,278 @@
+/* very pale lime green: #ccffcc */
+/* dark->light: light gray: a6a6a6, b3b3b3, bfbfbf, #cccccc, #d9d9d9, e6e6e6, f2f2f2*/
+/* slate: 7e7e7e */
+.header-bg {
+    background: #cccccc;
+}
+
+/*---------------------Buttons -------------------*/
+
+/* A light gray button with dark
+  text and a thin dark outline */
+.btn-light-gray {
+  border-radius: 9px;
+  color: #434343;
+  background: #cccccc;
+  border: solid #878787 1px;
+}
+.btn-light-gray:hover {
+  background: #a6a6a6;
+  color: #434343;
+  background-image: -webkit-linear-gradient(top, #a6a6a6, #bfbfbf);
+  background-image: -moz-linear-gradient(top, #a6a6a6, #bfbfbf);
+  background-image: -ms-linear-gradient(top, #a6a6a6, #bfbfbf);
+  background-image: -o-linear-gradient(top, #a6a6a6, #bfbfbf);
+  background-image: linear-gradient(to bottom, #a6a6a6, #bfbfbf);
+}
+.btn-light-gray:focus, .btn-light-gray.focus {
+    box-shadow: 0 0 0 0.2rem #a6a6a6;
+}
+
+/* A lighter gray button with a medium
+   outline and text in darker gray, it
+   also is more curved */
+.btn-light-gray-2 {
+  -webkit-border-radius: 60;
+  -moz-border-radius: 60;
+  border-radius: 60px;
+  color: #8d8d8d;
+  background: #f2f2f2;
+  border: solid #b3b3b3 2px;
+
+  font-size: 1em;
+}
+.btn-light-gray-2:hover {
+  background: #a6a6a6;
+  color: #fff;
+  border: solid #cccccc 2px;
+}
+.btn-light-gray-2:focus, .btn-light-gray.focus {
+    box-shadow: 0px 0px 9px #cccccc;
+}
+
+/* Outline button light-gray */
+.btn-outline-gray {
+  color: #999999;
+  background-color: transparent;
+  background-image: none;
+  border: 2px solid #a6a6a6;
+  font-weight: bold;
+}
+.btn-outline-gray:hover {
+  color: #fff;
+  background-color: #a6a6a6;
+  border-color: #a6a6a6;
+}
+.btn-outline-gray:focus, .btn-outline-gray.focus {
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.5);
+}
+
+.btn-light-gray-2b {
+    -webkit-border-radius: 60;
+    -moz-border-radius: 60;
+    border-radius: 60px;
+    color: #808080;
+    background: #f2f2f2;
+    border: solid #8c8c8c 2px;
+    font-weight: bold;
+}
+.btn-light-gray-2b:hover {
+    background: #a6a6a6;
+    color: #fff;
+    border: solid #cccccc 2px;
+}
+.btn-light-gray-2b:focus, .btn-light-gray-2b.focus {
+    box-shadow: 0px 0px 9px #cccccc;
+}
+/* ------------------------HEADERS----------------------------*/
+.post-header {
+    text-align: center;
+    color: #666666;
+    margin-top: 1em;
+}
+
+.profile-header {
+    text-align: center;
+}
+
+.comment-section-header {
+    margin-right: 5em;
+    font-size: 2em;
+    color: #666666;
+}
+
+.back-arrow-btn {
+    background: #cccccc;
+}
+
+/* -----------------Landing Page Custom Classes--------------*/
+.landing-jumbo {
+    background-color: #e9e9e9;
+    text-align: center;
+    border: 1px solid #cccccc;
+}
+
+.landing-jumbo h1 {
+    text-align: center;
+    color: #393939;
+}
+
+/* -------------------Index of Posts Custom Classes--------------------*/
+/* Card for each post */
+.index-card {
+    margin: 1.5em auto;
+    max-width: 18em;
+    max-height: 30em;
+    padding: .2em;
+    border-width: 1px;
+}
+.index-card img {
+    max-height: 100%;
+    max-width: 100%;
+}
+
+/*-------------Details of post------------*/
+
+.card-body {
+    padding: 0;
+    color: #666666;
+}
+
+/* Price of posted item(s) */
+.index-price-price {
+    font-size: .8em;
+}
+
+.index-price {
+    font-size: 1.2em;
+    padding-left: 1em;
+}
+
+/* Author of post */
+.author-link {  /* username link */
+    vertical-align: top;
+    color: #a6a6a6;
+    font-size: .8em;
+}
+
+.author-link:hover {
+    vertical-align: top;
+    color: #cccccc;
+}
+
+.posted-by {  /* 'posted by:' */
+    vertical-align: top;
+    font-size: .7em;
+    color: #b3b3b3;
+}
+/*----------------Show Post Custom Classes ------------*/
+
+.list-group-item-gray {
+  color: #666666;
+  background-color: #f2f2f2;
+}
+
+.list-group-item-gray.list-group-item-action:hover, .list-group-item-gray.list-group-item-action:focus {
+  color: #155724;
+  background-color: #b1dfbb;
+}
+
+.list-group-item-gray.list-group-item-action.active {
+  color: #fff;
+  background-color: #155724;
+  border-color: #155724;
+}
+
+/* --------------------Comments------------------*/
+/* Thn dark line */
+hr.style1{
+	border-top: 1px solid #a6a6a6;
+}
+/* Fades to light at edges */
+hr.style2 {
+  border: 0;
+  height: 1px;
+  background-image: -webkit-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+  background-image: -moz-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+  background-image: -ms-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+  background-image: -o-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+}
+
+/* Fades to light at edges - lighter */
+hr.style2-lighter {
+  border: 0;
+  height: 1px;
+  background-image: -webkit-linear-gradient(left, #fff, #cccccc, #fff);
+  background-image: -moz-linear-gradient(left, #fff, #cccccc, #fff);
+  background-image: -ms-linear-gradient(left, #fff, #cccccc, #fff);
+  background-image: -o-linear-gradient(left, #fff, #cccccc, #fff);
+}
+
+
+.comment-name {
+    color: #737373;
+    font-weight: bold;
+}
+.comment-name:hover {
+    color: #333333;
+}
+
+.comment-date {
+    float: right;
+    font-style: italic;
+    color: #cccccc;
+    font-size: .7em;
+}
+
+.comment-text {
+    color: #999999;
+}
+/* -------------Login Custom Classes ------------*/
+.login-h1 {
+    margin-top: .5em;
+    margin-left: .2em;
+    color: #666666;
+}
+
+.ul-no-style {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.btn-login {
+    width: 100%;
+}
+/*-----------------------------------------------*/
+
+.img-fluid, .figure-img {
+    margin-top: .5em;
+}
+
+.edit-btn {
+    display: inline;
+}
+.delete-form {
+    display: inline;
+}
+
+/* Send button for sending a message within a conversation */
+.submitMsgBtn {
+    float: right;
+}
+
+.edit-delete-btn-group {
+    margin-top: 1em;
+}
+
+.comment-btn {
+    margin-bottom: 1em;
+}
+
+.conv-msg {
+    color: #666666;
+}
+
+.conv-msg:hover {
+    color: #333333;
+}

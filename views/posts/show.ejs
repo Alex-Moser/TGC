@@ -1,0 +1,103 @@
+<% include ../partials/header %>
+<div class="container">
+    <div class="row">
+        <!-- Sidebar -->
+        <div class="info-box col-md-5">
+            <h4 class="post-header"><%= post.title %></h4>
+            <ul class="list-group">
+                <li class="show-stats list-group-item list-group-item-gray">
+                    <b>Asking Price:</b>&nbsp&nbsp $200.00
+                </li>
+                <li class="show-stats list-group-item list-group-item-gray">
+                    <b>Seller Rating:</b>&nbsp&nbsp 8.2/10
+                </li>
+                <li class="show-stats list-group-item list-group-item-gray">
+                    <b>Location:</b>&nbsp&nbsp Lawrence, KS
+                </li>
+            </ul>
+        </div>
+        <div class="col-md-7">
+            <!-- Large thumbnail showing the photo, item name, seller, etc. -->
+            <figure class="figure">
+                <!-- Item photo. -->
+                <img class="img-fluid figure-img rounded"
+                     src="<%= post.image %>">
+                <!-- Container for other information -->
+                <figcaption class="figure-caption">
+                    <p><%= post.description %></p>
+                    <p><em>Submitted by <%= post.seller.username %></em></p>
+                    <!-- Link to Seller's Profile page. -->
+                    <div>
+
+                        <a class="btn btn-light-gray-2"
+                           href="/profile/<%=post.seller.id%>">
+                            View <%= post.seller.username %>'s profile
+                        </a>
+                        <a class="btn btn-light-gray-2b" href="/posts/<%=post._id%>/purchase">
+                            Purchase
+                        </a>
+                    </div>
+                    <!-- Shows the edit and delete buttons only if currentUser
+                         created the post -->
+                 <% if(currentUser && post.seller.id.equals(currentUser._id)){ %>
+                     <div class="edit-delete-btn-group">
+                         <a class="btn btn-xs btn-light"
+                            href="/posts/<%= post._id%>/edit">Edit</a>
+                         <form class="delete-form"
+                               action="/posts/<%=post._id%>?_method=DELETE"
+                               method="POST">
+                             <button class="btn btn-xs btn-secondary">
+                                 Delete
+                             </button>
+                         </form>
+                     </div>
+
+                 <% } %>
+                </figcaption>
+            </figure>
+
+            <hr class="style1">
+            <div class="well">
+                <div class="container">
+                    <h2 class="comment-section-header">Comments</h2>
+
+                    <a class="btn btn-outline-gray comment-btn"
+                        href="/posts/<%=post._id%>/comments/new">
+                        Add new comments
+                    </a>
+                </div>
+
+                <% post.comments.forEach(function(comment){ %>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <hr class="style2-lighter">
+                            <!-- Comment details -->
+                            <a class="comment-name"
+                               href="/profile/<%= comment.author.id %>">
+                                <%= comment.author.username %>
+                            </a>
+                            <span class="comment-date">10 days ago</span>
+                            <p class="comment-text"><%= comment.text %></p>
+                            <!-- Edit/Delete btns for comment if user is author -->
+                         <% if(currentUser && comment.author.id.equals(currentUser._id)){ %>
+                                <a class= "btn btn-xs btn-light edit-btn"
+                                   href="/posts/<%=post._id%>/comments/<%=comment._id%>/edit">
+                                   Edit
+                                </a>
+                                <form class= "delete-form"
+                                      action="/posts/<%=post._id%>/comments/<%=comment._id%>?_method=DELETE"
+                                      method="POST">
+                                    <input type="submit"
+                                           class="btn btn-xs btn-secondary"
+                                           value="Delete">
+                                </form>
+                         <% } %>
+                        </div>
+                    </div>
+                <% })%>
+            </div>
+        </div>
+    </div>
+</div>
+
+<% include ../partials/footer %>

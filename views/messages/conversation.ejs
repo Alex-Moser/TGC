@@ -1,0 +1,40 @@
+<% include ../partials/header %>
+
+<div class="container">
+    <!-- Title -->
+    <h1>Conversations</h1>
+
+    <!-- Conversation messages -->
+    <% conversation.messages.forEach(function(message) { %>
+        <div class="row">
+            <div class="col-lg">
+                <p><b><%= message.sender.username %></b>: &nbsp&nbsp <%= message.text %></p>
+            </div>
+        </div>
+    <% }); %>
+    <hr>
+
+    <!-- Form to send a new message -->
+    <div class="row">
+        <div class="col-lg">
+            <% if (conversation.sender._id.equals(currentUser._id)) { %>
+                <form action="/profile/<%= conversation.receiver._id %>/message"
+                      method="POST">
+            <% } else if (conversation.receiver._id.equals(currentUser._id)) { %>
+                <form action="/profile/<%= conversation.sender._id %>/message"
+                      method="POST">
+            <% } %>
+                    <label for="newMessage">Send a New Message:</label>
+                    <textarea class="form-control"
+                              id="newMessage"
+                              rows="3"
+                              name="text"></textarea>
+                    <button type="submit" class="submitMsgBtn btn btn-outline-gray">
+                        Send
+                    </button>
+                </form>
+        </div>
+    </div>
+</div>
+
+<% include ../partials/footer %>
