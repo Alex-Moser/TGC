@@ -27,22 +27,13 @@ var commentRoutes   = require('./routes/comments'),
 // mongoose.connect('mongodb://localhost/tgc');
 var uri = 'mongodb://alexandertmoser:god727@ds235311-a0.mlab.com:35311,ds235311-a1.mlab.com:35311/tgc?replicaSet=rs-ds235311';
 
-var options = {
-  "server" : {
-    "socketOptions" : {
-      "keepAlive" : 300000,
-      "connectTimeoutMS" : 30000
-    }
-  },
-  "replset" : {
-    "socketOptions" : {
-      "keepAlive" : 300000,
-      "connectTimeoutMS" : 30000
-    }
-  }
-}
 
-mongoose.connect(uri, options);
+mongoose.connect(uri, {
+  socketTimeoutMS: 0,
+  keepAlive: true,
+  reconnectTries: 30
+});
+
 
 // Get Mongoose to use the global promise library - TODO:async callback cleanup.
 // mongoose.Promise = global.Promise;
