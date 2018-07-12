@@ -25,7 +25,7 @@ var commentRoutes   = require('./routes/comments'),
 
 // Conect to Post_yep db (database), if no db, creates one (i.e. the first time)
 // mongoose.connect('mongodb://localhost/tgc');
-mongoose.connect('mongodb://alexandertmoser:god727@ds131971.mlab.com:31971/tgc');
+mongoose.connect('mongodb://alexandertmoser:god727@ds235311-a0.mlab.com:35311,ds235311-a1.mlab.com:35311/tgc?replicaSet=rs-ds235311');
 
 // Get Mongoose to use the global promise library - TODO:async callback cleanup.
 mongoose.Promise = global.Promise;
