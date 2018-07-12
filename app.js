@@ -78,4 +78,4 @@ app.use(postRoutes);
 app.use(messageRoutes);
 
 // Listens on local server and notes this in terminal.
-app.listen(5000, () => console.log('Server has started.'));
+app.listen(process.env.PORT, '0.0.0.0');
