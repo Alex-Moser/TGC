@@ -24,19 +24,20 @@ var commentRoutes   = require('./routes/comments'),
     messageRoutes   = require('./routes/messages')
 
 // Conect to Post_yep db (database), if no db, creates one (i.e. the first time)
-// mongoose.connect('mongodb://localhost/tgc');
+mongoose.connect('mongodb://localhost/tgc');
 var uri = 'mongodb://alexandertmoser:god727@ds235311-a0.mlab.com:35311,ds235311-a1.mlab.com:35311/tgc?replicaSet=rs-ds235311';
 
 
-mongoose.connect(uri, {
-  socketTimeoutMS: 0,
-  keepAlive: true,
-  reconnectTries: 30
-});
+// mongoose.connect(uri, {
+//   socketTimeoutMS: 0,
+//   keepAlive: true,
+//   reconnectTries: 30
+// });
 
 
 // Get Mongoose to use the global promise library - TODO:async callback cleanup.
 // mongoose.Promise = global.Promise;
+
 //Get the default connection
 var db = mongoose.connection;
 //Bind connection to error event (to get notification of connection errors)
@@ -78,4 +79,7 @@ app.use(postRoutes);
 app.use(messageRoutes);
 
 // Listens on local server and notes this in terminal.
-app.listen(process.env.PORT, '0.0.0.0');
+app.listen(3000, () => console.log('Server has started.'));
+
+// Listens on Heroku server
+// app.listen(process.env.PORT, '0.0.0.0');

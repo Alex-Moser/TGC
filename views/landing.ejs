@@ -1,11 +1,159 @@
-<% include partials/header %>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>TheGolfClub</title>
+    <!-- FontAwesome -->
+    <link rel="stylesheet"
+          href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
+          integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
+          crossorigin="anonymous">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="/bootstrap-4.1.1-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/stylesheets/main.css">
+  </head>
+  <body>
+      <!-- bootstrap navbar -->
+      <nav class="navbar navbar-expand-md header-bg-landing navbar-dark">
 
-<div class="container-fluid">
-    <div class="jumbotron landing-jumbo">
-        <h1>Welcome to TGC!</h1>
 
-        <a class="btn btn-light-gray" href="/posts">View all posts</a>
+          <!-- Toggler (Hamburger icon) -->
+          <button class="navbar-toggler"
+                  data-target="#navbarToggler"
+                  data-toggle="collapse"
+                  type="button">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+          <!-- Display either login and sign-up or my profile and logout -->
+          <div class="collapse navbar-collapse justify-content-end"
+               id="navbarToggler">
+              <ul class="navbar-nav" >
+               <%  if(!currentUser){%>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/login">Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/register">Sign-up</a>
+                        </li>
+                 <% } else { %>
+                        <li class="nav-item">
+                            <a class="nav-link"
+                               href="/profile/<%= currentUser._id %>">
+                                My Profile
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link"
+                               href="/logout/<%=currentUser.id %>">Logout</a>
+                        </li>
+                 <% } %>
+              </ul>
+          </div>
+      </nav>
+      <!-- Flash Messages -->
+      <div class="container">
+      <% if(error && error.length > 0){ %>
+            <div class="alert alert-danger" role="alert">
+                <%=error%>
+            </div>
+        <%}%>
+      <% if(success && success.length >0){ %>
+            <div class="alert alert-success" role="alert">
+                <%=success%>
+            </div>
+        <%}%>
+      </div>
+
+
+
+
+
+
+
+<div class="jumbotron jumbotron-fluid landing-jumbo">
+
+    <div class="container">
+
+        <h1 class="landing-h1">Welcome to TGC!</h1>
+
+
+        <h5 class="landing-desc-1">
+            <span class="landing-emph">
+                The Golf Club is an online marketplace for new and used golf
+                clubs and accessories.
+            </span>
+        </h5>
+
+
+        <h5 class="landing-desc-2">
+            You get to keep 100% of your
+            profits, and using the site is completely
+            free!
+        </h5>
+
+
+        <!-- View all posts button -->
+        <a class="btn btn btn-block btn-dark-green" href="/posts">
+            Start Browsing Now!
+        </a>
+
+
     </div>
+
 </div>
+<div class="container">
+
+    <h4 class="signup-header">Creating an account is simple and free!</h4>
+
+
+    <form action="/register" method="POST">
+
+        <div class="form-group form-grp-email">
+
+            <label for="userEmail">Email</label>
+
+
+            <input name="username" class="form-control box-shadow-green" type="email" id="userEmail"
+                   placeholder="Email">
+
+
+            <small id="userEmail" class="form-text text-muted">
+                We'll only use your email if we need to contact
+                you regarding your account.
+            </small>
+
+        </div>
+
+
+        <div class="form-group form-grp-pswd">
+
+            <label for="userPassword">Password</label>
+
+
+            <input name="password" class="form-control box-shadow-green" type="password" id="userPassword"
+                   placeholder="Password">
+
+        </div>
+
+
+        <div class="form-group form-grp-pswd-c">
+
+            <label for="userPasswordC">Confirm Password</label>
+
+
+            <input class="form-control box-shadow-green" type="password" id="userPasswordC"
+                   placeholder="Password">
+
+        </div>
+
+
+        <button type="submit" class="box-shadow-green btn btn-search">Submit</button>
+
+    </form>
+
+</div>
+
 
 <% include partials/footer %>

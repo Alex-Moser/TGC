@@ -1,90 +1,7 @@
-/*
-    font-family: 'Alegreya', serif;
-
-    font-family: 'Alegreya Sans', sans-serif;
-
-    font-family: 'Alegreya Sans SC', sans-serif;
-
-    font-family: 'Merriweather', serif;
-
-    font-family: 'Merriweather Sans', sans-serif;
-
-    font-family: 'Quattrocento', serif;
-
-*/
-/*Color variables*/
-.btn-dark-green {
-  font-family: "Alegreya Sans SC", sans-serif;
-  border-radius: 15px;
-  color: #3bb378;
-  font-weight: bold;
-  background: #fff;
-  border: solid #3bb378 0.5em;
-}
-
-.btn-dark-green:hover {
-  background: #78d2a5;
-  color: #fff;
-}
-
-.btn-dark-green:focus, .btn-dark-green:focus {
-  box-shadow: 0 0 0 0.2rem #9edfbe;
-}
-
-.btn-search {
-  font-family: "Alegreya Sans SC", sans-serif;
-  border-radius: 5px;
-  color: #fff;
-  background: #3bb378;
-  border: solid #fff 2px;
-}
-
-.btn-search:hover {
-  background: #287951;
-  color: #fff;
-  border: solid #cccccc 2px;
-}
-
-.btn-search:focus, .btn-search.focus {
-  box-shadow: 0px 0px 9px #9adebc;
-}
-
-input.box-shadow-green:focus {
-  box-shadow: 0 0 0.5em #9adebc;
-  border-color: #3bb378;
-}
-
-.header-bg-landing {
-  background: #3bb378;
-  color: #fff;
-  font-family: "Alegreya Sans SC", sans-serif;
-}
-
-.landing-jumbo {
-  padding-top: 2em;
-  background: #3bb378;
-  color: #fff;
-}
-
-.landing-h1 {
-  font-family: "Alegreya", serif;
-  color: #fff;
-}
-
-.landing-desc-1 {
-  font-family: "Alegreya Sans SC", sans-serif;
-  color: #fff;
-  margin-top: 1em;
-  margin-bottom: 1em;
-}
-
-.landing-desc-2 {
-  font-family: "Alegreya Sans SC", sans-serif;
-  margin-bottom: 1.5em;
-  color: #fff;
-}
+@import "landing";
 
 /*---------------------Buttons -------------------*/
+
 /* A light gray button with dark
   text and a thin dark outline */
 .btn-light-gray {
@@ -93,7 +10,6 @@ input.box-shadow-green:focus {
   background: #cccccc;
   border: solid #878787 1px;
 }
-
 .btn-light-gray:hover {
   background: #a6a6a6;
   color: #434343;
@@ -103,9 +19,8 @@ input.box-shadow-green:focus {
   background-image: -o-linear-gradient(top, #a6a6a6, #bfbfbf);
   background-image: linear-gradient(to bottom, #a6a6a6, #bfbfbf);
 }
-
 .btn-light-gray:focus, .btn-light-gray.focus {
-  box-shadow: 0 0 0 0.2rem #a6a6a6;
+    box-shadow: 0 0 0 0.2rem #a6a6a6;
 }
 
 /* A lighter gray button with a medium
@@ -118,17 +33,16 @@ input.box-shadow-green:focus {
   color: #8d8d8d;
   background: #f2f2f2;
   border: solid #b3b3b3 2px;
+
   font-size: 1em;
 }
-
 .btn-light-gray-2:hover {
   background: #a6a6a6;
   color: #fff;
   border: solid #cccccc 2px;
 }
-
 .btn-light-gray-2:focus, .btn-light-gray.focus {
-  box-shadow: 0px 0px 9px #cccccc;
+    box-shadow: 0px 0px 9px #cccccc;
 }
 
 /* Outline button light-gray */
@@ -139,109 +53,103 @@ input.box-shadow-green:focus {
   border: 2px solid #a6a6a6;
   font-weight: bold;
 }
-
 .btn-outline-gray:hover {
   color: #fff;
   background-color: #a6a6a6;
   border-color: #a6a6a6;
 }
-
 .btn-outline-gray:focus, .btn-outline-gray.focus {
   box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.5);
 }
 
 .btn-light-gray-2b {
-  -webkit-border-radius: 60;
-  -moz-border-radius: 60;
-  border-radius: 60px;
-  color: #808080;
-  background: #f2f2f2;
-  border: solid #8c8c8c 2px;
-  font-weight: bold;
+    -webkit-border-radius: 60;
+    -moz-border-radius: 60;
+    border-radius: 60px;
+    color: #808080;
+    background: #f2f2f2;
+    border: solid #8c8c8c 2px;
+    font-weight: bold;
 }
-
 .btn-light-gray-2b:hover {
-  background: #a6a6a6;
-  color: #fff;
-  border: solid #cccccc 2px;
+    background: #a6a6a6;
+    color: #fff;
+    border: solid #cccccc 2px;
 }
-
 .btn-light-gray-2b:focus, .btn-light-gray-2b.focus {
-  box-shadow: 0px 0px 9px #cccccc;
+    box-shadow: 0px 0px 9px #cccccc;
 }
-
 .post-header {
-  text-align: center;
-  color: #666666;
-  margin-top: 1em;
+    text-align: center;
+    color: #666666;
+    margin-top: 1em;
 }
 
 .profile-header {
-  text-align: center;
+    text-align: center;
 }
 
 .comment-section-header {
-  margin-right: 5em;
-  font-size: 2em;
-  color: #666666;
+    margin-right: 5em;
+    font-size: 2em;
+    color: #666666;
 }
 
 .back-arrow-btn {
-  background: #fff;
+    background: #fff;
 }
+
 
 /* -------------------Index of Posts Custom Classes--------------------*/
 /* Card for each post */
 .index-card {
-  margin: 1.5em auto;
-  max-width: 18em;
-  max-height: 30em;
-  padding: 0.2em;
-  border-width: 1px;
+    margin: 1.5em auto;
+    max-width: 18em;
+    max-height: 30em;
+    padding: .2em;
+    border-width: 1px;
 }
-
 .index-card img {
-  max-height: 100%;
-  max-width: 100%;
+    max-height: 100%;
+    max-width: 100%;
 }
 
 /*-------------Details of post------------*/
+
 .card-body {
-  padding: 0;
-  color: #666666;
+    padding: 0;
+    color: #666666;
 }
 
 /* Price of posted item(s) */
 .index-price-price {
-  font-size: 0.8em;
+    font-size: .8em;
 }
 
 .index-price {
-  font-size: 1.2em;
-  padding-left: 1em;
+    font-size: 1.2em;
+    padding-left: 1em;
 }
 
 /* Author of post */
-.author-link {
-  /* username link */
-  vertical-align: top;
-  color: #a6a6a6;
-  font-size: 0.8em;
+.author-link {  /* username link */
+    vertical-align: top;
+    color: #a6a6a6;
+    font-size: .8em;
 }
 
 .author-link:hover {
-  vertical-align: top;
-  color: #cccccc;
+    vertical-align: top;
+    color: #cccccc;
 }
 
-.posted-by {
-  /* 'posted by:' */
-  vertical-align: top;
-  font-size: 0.7em;
-  color: #b3b3b3;
+.posted-by {  /* 'posted by:' */
+    vertical-align: top;
+    font-size: .7em;
+    color: #b3b3b3;
 }
-
 /*----------------Show Post Custom Classes ------------*/
+
 .list-group-item-gray {
   color: #666666;
   background-color: #f2f2f2;
@@ -260,10 +168,9 @@ input.box-shadow-green:focus {
 
 /* --------------------Comments------------------*/
 /* Thn dark line */
-hr.style1 {
-  border-top: 1px solid #a6a6a6;
+hr.style1{
+	border-top: 1px solid #a6a6a6;
 }
-
 /* Fades to light at edges */
 hr.style2 {
   border: 0;
@@ -284,75 +191,71 @@ hr.style2-lighter {
   background-image: -o-linear-gradient(left, #fff, #cccccc, #fff);
 }
 
-.comment-name {
-  color: #737373;
-  font-weight: bold;
-}
 
+.comment-name {
+    color: #737373;
+    font-weight: bold;
+}
 .comment-name:hover {
-  color: #333333;
+    color: #333333;
 }
 
 .comment-date {
-  float: right;
-  font-style: italic;
-  color: #cccccc;
-  font-size: 0.7em;
+    float: right;
+    font-style: italic;
+    color: #cccccc;
+    font-size: .7em;
 }
 
 .comment-text {
-  color: #999999;
+    color: #999999;
 }
-
 /* -------------Login Custom Classes ------------*/
 .login-h1 {
-  margin-top: 0.5em;
-  margin-left: 0.2em;
-  color: #666666;
+    margin-top: .5em;
+    margin-left: .2em;
+    color: #666666;
 }
 
 .ul-no-style {
-  list-style: none;
-  margin: 0;
-  padding: 0;
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
 .btn-login {
-  width: 100%;
+    width: 100%;
 }
-
 /*-----------------------------------------------*/
+
 .img-fluid, .figure-img {
-  margin-top: 0.5em;
+    margin-top: .5em;
 }
 
 .edit-btn {
-  display: inline;
+    display: inline;
 }
-
 .delete-form {
-  display: inline;
+    display: inline;
 }
 
 /* Send button for sending a message within a conversation */
 .submitMsgBtn {
-  float: right;
+    float: right;
 }
 
 .edit-delete-btn-group {
-  margin-top: 1em;
+    margin-top: 1em;
 }
 
 .comment-btn {
-  margin-bottom: 1em;
+    margin-bottom: 1em;
 }
 
 .conv-msg {
-  color: #666666;
+    color: #666666;
 }
 
 .conv-msg:hover {
-  color: #333333;
+    color: #333333;
 }
-
-/*# sourceMappingURL=main.css.map */
