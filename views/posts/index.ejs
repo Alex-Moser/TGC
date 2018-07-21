@@ -1,51 +1,63 @@
 <% include ../partials/header %>
 
 <div class="container">
-    <header class="border-top-0 jumbotron">
-        <div class="container">
-            <h1>All Posts</h1>
 
-            <p>
-                View our entire collection of used golf clubs and accessories
-                or search for something more specific!
-            </p>
+    <header class="jumbotron">
 
-            <p>
-                <a class="btn btn-light-gray" href="/posts/new">Create New Post</a>
-            </p>
-        </div>
+            <h1>What are you looking for?</h1>
+            
+
+
+
+            <a class="btn btn-light-gray" href="/posts/new">Create New Post</a>
+
     </header>
 
+
     <div class="row">
+
         <% posts.forEach(function(post){ %>
+
             <div class="col-lg-4 col-md-6 col-sm-12">
+
                 <!--// Posts -->
                 <div class="card index-card">
+
                     <img src="<%= post.image %>">
 
+
                     <div class="card-body">
+
                         <!-- Short description of what is being sold -->
                         <div><%= post.title %></div>
 
+
                         <!-- States who made post and links to their profile -->
                         <div>
+
                             <span class="posted-by"> posted by:</span>
 
                             <a href="/profile/<%= post.seller.id %>" class="author-link">
                                 <%= post.seller.username %>
                             </a>
+
                         </div>
 
                         <!-- Section for the More Info button and price info -->
                         <div class="index-card-footer">
+
                             <!-- More info button -->
                             <a href="/posts/<%= post._id %>"
                             class="btn btn-light-gray-2">More Info</a>
 
+
                             <!-- Price display -->
                             <span class="index-price">
+
                                 <span class="index-price-price">price: </span> $69.97
+
                             </span>
+
                         </div>
                     </div>
                 </div>

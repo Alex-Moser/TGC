@@ -1,101 +1,37 @@
-/*
-    font-family: 'Alegreya', serif;
 
-    font-family: 'Alegreya Sans', sans-serif;
+@import "variables";
 
-    font-family: 'Alegreya Sans SC', sans-serif;
-
-    font-family: 'Merriweather', serif;
-
-    font-family: 'Merriweather Sans', sans-serif;
-
-    font-family: 'Quattrocento', serif;
-
-*/
-
-
-/*Color variables*/
-$dark_green: #3bb378;
-$darker_green: #287951;
-
-// BUTTONS ------------------------------------
-
-.btn-dark-green {
-    font-family: 'Alegreya Sans SC', sans-serif;
-    border-radius: 15px;
-    color: $dark_green;
-    font-weight: bold;
-    background: #fff;
-    border: solid $dark_green .5em;
-}
-
-.btn-dark-green:hover {
-    background: #78d2a5;
-    color: #fff;
-}
-
-.btn-dark-green:focus, .btn-dark-green:focus {
-    box-shadow: 0 0 0 0.2rem #9edfbe;
-}
-
-
-
-.btn-search{
-  font-family: 'Alegreya Sans SC', sans-serif;
-  border-radius: 5px;
-  color: #fff;
-  background: $dark_green;
-  border: solid #fff 2px;
-}
-
-.btn-search:hover {
-  background: $darker_green;
-  color: #fff;
-  border: solid #cccccc 2px;
-}
-
-.btn-search:focus, .btn-search.focus {
-    box-shadow: 0px 0px 9px #9adebc;
-}
-
-
-// When someone focuses this input the shadow/border is green
-input.box-shadow-green:focus {
-    box-shadow: 0 0 .5em #9adebc;
-    border-color: $dark_green;
-}
-
-// Nav bar for landing page
+/* Nav bar for landing page */
 .header-bg-landing {
-    background: $dark_green;
+    background: $dark-green;
     color: #fff;
-    font-family: 'Alegreya Sans SC', sans-serif;
 }
 
-// Jumbotron on landing page
+
+/* Jumbotron on landing page */
 .landing-jumbo {
     padding-top: 2em;
-    background: $dark_green;
+    background: $dark-green;
     color: #fff;
 }
 
-// Welcome to TGC
+
+/* Welcome to TGC */
 .landing-h1 {
-    font-family: 'Alegreya', serif;
+    font-family: $aleg;
     color: #fff;
 }
 
 
-// The Golf Club is...
+/* The Golf Club is... */
 .landing-desc-1 {
-    font-family: 'Alegreya Sans SC', sans-serif;
     color: #fff;
     margin-top: 1em;
     margin-bottom: 1em;
 }
 
+
 .landing-desc-2 {
-    font-family: 'Alegreya Sans SC', sans-serif;
     margin-bottom: 1.5em;
     color: #fff;
 }

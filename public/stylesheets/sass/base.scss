@@ -1,6 +1,51 @@
 @import "landing";
 
-/*---------------------Buttons -------------------*/
+body {
+    font-family: $aleg-sans;
+}
+
+
+
+/***************************************************************/
+/************************** BUTTONS ****************************/
+/***************************************************************/
+
+.btn-dark-green {
+    border-radius: 15px;
+    color: $dark-green;
+    font-weight: bold;
+    background: #fff;
+    border: solid $dark-green .5em;
+}
+
+.btn-dark-green:hover {
+    background: #78d2a5;
+    color: #fff;
+}
+
+.btn-dark-green:focus, .btn-dark-green:focus {
+    box-shadow: 0 0 0 0.2rem #9edfbe;
+}
+
+/* small green with white letter, 9/10 rectangle shape (rs) */
+.btn-sm-9{
+  border-radius: 5px;
+  color: #fff;
+  background: $dark-green;
+  border: solid #fff 2px;
+}
+
+.btn-sm-9:hover {
+  background: $darker-green;
+  color: #fff;
+  border: solid #cccccc 2px;
+}
+
+.btn-sm-9:focus, .btn-sm-9.focus {
+    box-shadow: 0px 0px 9px #9adebc;
+}
+
+
 
 /* A light gray button with dark
   text and a thin dark outline */
@@ -79,6 +124,19 @@
 .btn-light-gray-2b:focus, .btn-light-gray-2b.focus {
     box-shadow: 0px 0px 9px #cccccc;
 }
+
+/***************************************************************/
+/******************* END OF BUTTONS ****************************/
+/***************************************************************/
+
+
+// When someone focuses this input the shadow/border is green
+input.box-shadow-green:focus {
+    box-shadow: 0 0 .5em #9adebc;
+    border-color: $dark-green;
+}
+
+
 .post-header {
     text-align: center;
     color: #666666;
