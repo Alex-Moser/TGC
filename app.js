@@ -29,9 +29,10 @@ var uri = 'mongodb://alexandertmoser:god727@ds235311-a0.mlab.com:35311,ds235311-
 
 
 mongoose.connect(uri, {
-  socketTimeoutMS: 0,
-  keepAlive: true,
-  reconnectTries: 30
+  socketTimeoutMS: 45000,
+  reconnectTries: Number.MAX_VALUE,
+  reconnectInterval: 500,
+  connectionTimeoutMS: 10000
 });
 
 
