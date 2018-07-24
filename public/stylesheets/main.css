@@ -1,21 +1,27 @@
 /*Color variables*/
+/*main*/
+/*Violet*/
+/*Red*/
+/*green*/
 /*Font Variables*/
 /* Nav bar for landing page */
 .header-bg-landing {
-  background: #3bb378;
   color: #fff;
+  background: #1AA61A;
+  background: linear-gradient(90deg, #1AA61A 0%, #8CC21F 100%);
 }
 
 /* Jumbotron on landing page */
 .landing-jumbo {
   padding-top: 2em;
-  background: #3bb378;
+  background: #1AA61A;
+  background: linear-gradient(90deg, #1AA61A 0%, #8CC21F 100%);
   color: #fff;
 }
 
 /* Welcome to TGC */
 .landing-h1 {
-  font-family: "Alegreya", serif;
+  font-family: "Merriweather", serif;
   color: #fff;
 }
 
@@ -31,131 +37,237 @@
   color: #fff;
 }
 
+.signup-header {
+  margin-bottom: 1em;
+}
+
+/*Color variables*/
+/*main*/
+/*Violet*/
+/*Red*/
+/*green*/
+/*Font Variables*/
+.btn-search {
+  margin-top: 0.5em;
+}
+
+.index-header-row {
+  margin-top: 1em;
+}
+
+div.search-form-grp input {
+  width: 100%;
+}
+
+.index-buy-col {
+  padding: 1em;
+}
+
+.index-filter-col {
+  padding: 1em;
+  color: #116611;
+}
+
+.btn-more-info {
+  font-weight: normal;
+}
+
 body {
-  font-family: "Alegreya Sans", sans-serif;
+  font-family: "Merriweather Sans", sans-serif;
+  color: #5c645c;
 }
 
-/***************************************************************/
-/************************** BUTTONS ****************************/
-/***************************************************************/
-.btn-dark-green {
-  border-radius: 15px;
-  color: #3bb378;
-  font-weight: bold;
+/* NAVBAR */
+/* navbar  background color */
+.nav-bg {
   background: #fff;
-  border: solid #3bb378 0.5em;
 }
 
-.btn-dark-green:hover {
-  background: #78d2a5;
+/* Navbar text */
+#backArrow,
+#brand {
+  font-weight: bold;
+  color: #2ede2e;
+}
+
+#login,
+#register,
+#myprofile,
+#logout {
+  color: #2ede2e;
+}
+
+/* BUTTONS ****************************/
+/*yellow-green */
+/* GREEN*/
+.btn-green {
   color: #fff;
+  background: #1AA61A;
+  font-weight: bold;
 }
 
-.btn-dark-green:focus, .btn-dark-green:focus {
-  box-shadow: 0 0 0 0.2rem #9edfbe;
+.btn-green:hover {
+  background: #fff;
+  color: #1AA61A;
 }
 
-/* small green with white letter, 9/10 rectangle shape (rs) */
-.btn-sm-9 {
-  border-radius: 5px;
-  color: #fff;
-  background: #3bb378;
-  border: solid #fff 2px;
-}
-
-.btn-sm-9:hover {
-  background: #287951;
-  color: #fff;
-  border: solid #cccccc 2px;
-}
-
-.btn-sm-9:focus, .btn-sm-9.focus {
+.btn-green:focus, .btn-green.focus {
   box-shadow: 0px 0px 9px #9adebc;
 }
 
-/* A light gray button with dark
-  text and a thin dark outline */
-.btn-light-gray {
-  border-radius: 9px;
-  color: #434343;
-  background: #cccccc;
-  border: solid #878787 1px;
-}
-
-.btn-light-gray:hover {
-  background: #a6a6a6;
-  color: #434343;
-  background-image: -webkit-linear-gradient(top, #a6a6a6, #bfbfbf);
-  background-image: -moz-linear-gradient(top, #a6a6a6, #bfbfbf);
-  background-image: -ms-linear-gradient(top, #a6a6a6, #bfbfbf);
-  background-image: -o-linear-gradient(top, #a6a6a6, #bfbfbf);
-  background-image: linear-gradient(to bottom, #a6a6a6, #bfbfbf);
-}
-
-.btn-light-gray:focus, .btn-light-gray.focus {
-  box-shadow: 0 0 0 0.2rem #a6a6a6;
-}
-
-/* A lighter gray button with a medium
-   outline and text in darker gray, it
-   also is more curved */
-.btn-light-gray-2 {
-  -webkit-border-radius: 60;
-  -moz-border-radius: 60;
-  border-radius: 60px;
-  color: #8d8d8d;
-  background: #f2f2f2;
-  border: solid #b3b3b3 2px;
-  font-size: 1em;
-}
-
-.btn-light-gray-2:hover {
-  background: #a6a6a6;
+/* Bright Green button white color */
+.btn-green-bright {
   color: #fff;
-  border: solid #cccccc 2px;
+  background: #2ede2e;
+  font-weight: bold;
+  border: #1AA61A 2px solid;
 }
 
-.btn-light-gray-2:focus, .btn-light-gray.focus {
-  box-shadow: 0px 0px 9px #cccccc;
+.btn-green-bright:hover {
+  background: #fff;
+  color: #1AA61A;
+  border: #1AA61A 2px solid;
 }
 
-/* Outline button light-gray */
-.btn-outline-gray {
-  color: #999999;
-  background-color: transparent;
-  background-image: none;
-  border: 2px solid #a6a6a6;
+.btn-green-bright:focus, .btn-green.focus {
+  box-shadow: 0px 0px 9px #9adebc;
+}
+
+/* Bright Green button white color */
+.btn-green-bright-o {
+  color: #116611;
+  background: #fff;
+  border: #6b006b 1px solid;
+}
+
+.btn-green-bright-o:hover {
+  background: #fff;
+  color: #2ede2e;
+}
+
+.btn-green-bright-o:focus, .btn-green.focus {
+  box-shadow: 0px 0px 9px #9adebc;
+}
+
+/* GREEN OUTLINE */
+.btn-green-outline {
+  color: #1AA61A;
+  background: #fff;
+  border: 2px #1AA61A solid;
+}
+
+.btn-green-outline:hover {
+  background: #1AA61A;
+  color: #fff;
+}
+
+.btn-green-outline:focus, .btn-green-outline.focus {
+  box-shadow: 0px 0px 9px #9adebc;
+}
+
+/*Violet button white text*/
+.btn-violet {
+  color: #fff;
+  background: #cd00cd;
+  font-weight: bold;
+  border: #cd00cd 2px solid;
+}
+
+.btn-violet:hover {
+  background: #fff;
+  color: #cd00cd;
+}
+
+.btn-violet:focus, .btn-sm-9.focus {
+  box-shadow: 0px 0px 9px #CD88AF;
+}
+
+/*Transparent button with violet border and text*/
+.btn-violet-outline {
+  color: #cd00cd;
+  background: transparent;
+  border: #cd00cd 2px solid;
   font-weight: bold;
 }
 
-.btn-outline-gray:hover {
+.btn-violet-outline:hover {
+  background: #cd00cd;
   color: #fff;
-  background-color: #a6a6a6;
-  border-color: #a6a6a6;
 }
 
-.btn-outline-gray:focus, .btn-outline-gray.focus {
-  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.5);
+.btn-violet-outline:focus, .btn-sm-9.focus {
+  box-shadow: 0px 0px 9px #CD88AF;
 }
 
-.btn-light-gray-2b {
-  -webkit-border-radius: 60;
-  -moz-border-radius: 60;
-  border-radius: 60px;
-  color: #808080;
-  background: #f2f2f2;
-  border: solid #8c8c8c 2px;
+/*Transparent button with violet-d border and text*/
+.btn-violet-d-outline {
+  color: #fff;
+  background: #6b006b;
+  border: #cd00cd 2px solid;
+}
+
+.btn-violet-d-outline:hover {
+  background: #fff;
+  color: #cd00cd;
+}
+
+.btn-violet-d-outline:focus, .btn-violet-d-outline.focus {
+  box-shadow: 0px 0px 9px #CD88AF;
+}
+
+/*White button with shadow and violet color*/
+.btn-white {
+  border-radius: 15px;
+  color: #cd00cd;
   font-weight: bold;
+  background: #fff;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-.btn-light-gray-2b:hover {
-  background: #a6a6a6;
+.btn-white:hover {
+  background: #cd00cd;
   color: #fff;
-  border: solid #cccccc 2px;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-.btn-light-gray-2b:focus, .btn-light-gray-2b.focus {
-  box-shadow: 0px 0px 9px #cccccc;
+.btn-white:focus, .btn-white:focus {
+  box-shadow: 0 0 0 0.2rem #9edfbe;
+}
+
+/*White button with shadow and red color*/
+.btn-white-r {
+  border-radius: 15px;
+  color: #8e1717;
+  font-weight: bold;
+  background: #fff;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.btn-white-r:hover {
+  background: #8e1717;
+  color: #fff;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.btn-white-r:focus, .btn-white-r:focus {
+  box-shadow: 0 0 0 0.2rem #9edfbe;
+}
+
+/* White button with green text*/
+.btn-white-g {
+  border-radius: 15px;
+  color: #2ede2e;
+  background: #fff;
+  border: #cccccc 2px solid;
+}
+
+.btn-white-g:hover {
+  background: #2ede2e;
+  color: #fff;
+}
+
+.btn-white-g:focus, .btn-white:focus {
+  box-shadow: 0 0 0 0.2rem #9edfbe;
 }
 
 /***************************************************************/
@@ -163,7 +275,7 @@ body {
 /***************************************************************/
 input.box-shadow-green:focus {
   box-shadow: 0 0 0.5em #9adebc;
-  border-color: #3bb378;
+  border-color: #1AA61A;
 }
 
 .post-header {
@@ -183,7 +295,7 @@ input.box-shadow-green:focus {
 }
 
 .back-arrow-btn {
-  background: #fff;
+  background: transparent;
 }
 
 /* -------------------Index of Posts Custom Classes--------------------*/

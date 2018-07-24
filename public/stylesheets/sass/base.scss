@@ -1,129 +1,196 @@
 @import "landing";
+@import "index";
 
 body {
-    font-family: $aleg-sans;
+    font-family: $merri-sans;
+    color: #5c645c;
 }
 
 
+/* NAVBAR */
 
-/***************************************************************/
-/************************** BUTTONS ****************************/
-/***************************************************************/
-
-.btn-dark-green {
-    border-radius: 15px;
-    color: $dark-green;
-    font-weight: bold;
+/* navbar  background color */
+.nav-bg {
     background: #fff;
-    border: solid $dark-green .5em;
 }
 
-.btn-dark-green:hover {
-    background: #78d2a5;
+/* Navbar text */
+#backArrow,
+#brand {
+    font-weight: bold;
+    color: $green-bright;
+}
+
+#login,
+#register,
+#myprofile,
+#logout {
+    color: $green-bright;
+}
+
+/* BUTTONS ****************************/
+/*yellow-green */
+
+
+
+/* GREEN*/
+.btn-green {
     color: #fff;
+    background: $green;
+    font-weight: bold;
 }
+.btn-green:hover {
+  background: #fff;
+  color: $green;
 
-.btn-dark-green:focus, .btn-dark-green:focus {
-    box-shadow: 0 0 0 0.2rem #9edfbe;
 }
-
-/* small green with white letter, 9/10 rectangle shape (rs) */
-.btn-sm-9{
-  border-radius: 5px;
-  color: #fff;
-  background: $dark-green;
-  border: solid #fff 2px;
-}
-
-.btn-sm-9:hover {
-  background: $darker-green;
-  color: #fff;
-  border: solid #cccccc 2px;
-}
-
-.btn-sm-9:focus, .btn-sm-9.focus {
+.btn-green:focus, .btn-green.focus {
     box-shadow: 0px 0px 9px #9adebc;
 }
 
-
-
-/* A light gray button with dark
-  text and a thin dark outline */
-.btn-light-gray {
-  border-radius: 9px;
-  color: #434343;
-  background: #cccccc;
-  border: solid #878787 1px;
-}
-.btn-light-gray:hover {
-  background: #a6a6a6;
-  color: #434343;
-  background-image: -webkit-linear-gradient(top, #a6a6a6, #bfbfbf);
-  background-image: -moz-linear-gradient(top, #a6a6a6, #bfbfbf);
-  background-image: -ms-linear-gradient(top, #a6a6a6, #bfbfbf);
-  background-image: -o-linear-gradient(top, #a6a6a6, #bfbfbf);
-  background-image: linear-gradient(to bottom, #a6a6a6, #bfbfbf);
-}
-.btn-light-gray:focus, .btn-light-gray.focus {
-    box-shadow: 0 0 0 0.2rem #a6a6a6;
-}
-
-/* A lighter gray button with a medium
-   outline and text in darker gray, it
-   also is more curved */
-.btn-light-gray-2 {
-  -webkit-border-radius: 60;
-  -moz-border-radius: 60;
-  border-radius: 60px;
-  color: #8d8d8d;
-  background: #f2f2f2;
-  border: solid #b3b3b3 2px;
-
-  font-size: 1em;
-}
-.btn-light-gray-2:hover {
-  background: #a6a6a6;
-  color: #fff;
-  border: solid #cccccc 2px;
-}
-.btn-light-gray-2:focus, .btn-light-gray.focus {
-    box-shadow: 0px 0px 9px #cccccc;
-}
-
-/* Outline button light-gray */
-.btn-outline-gray {
-  color: #999999;
-  background-color: transparent;
-  background-image: none;
-  border: 2px solid #a6a6a6;
-  font-weight: bold;
-}
-.btn-outline-gray:hover {
-  color: #fff;
-  background-color: #a6a6a6;
-  border-color: #a6a6a6;
-}
-.btn-outline-gray:focus, .btn-outline-gray.focus {
-  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.5);
-}
-
-.btn-light-gray-2b {
-    -webkit-border-radius: 60;
-    -moz-border-radius: 60;
-    border-radius: 60px;
-    color: #808080;
-    background: #f2f2f2;
-    border: solid #8c8c8c 2px;
-    font-weight: bold;
-}
-.btn-light-gray-2b:hover {
-    background: #a6a6a6;
+/* Bright Green button white color */
+.btn-green-bright {
     color: #fff;
-    border: solid #cccccc 2px;
+    background: $green-bright;
+    font-weight: bold;
+    border: $green 2px solid;
 }
-.btn-light-gray-2b:focus, .btn-light-gray-2b.focus {
-    box-shadow: 0px 0px 9px #cccccc;
+.btn-green-bright:hover {
+  background: #fff;
+  color: $green;
+  border: $green 2px solid;
 }
+.btn-green-bright:focus, .btn-green.focus {
+    box-shadow: 0px 0px 9px #9adebc;
+}
+/* Bright Green button white color */
+.btn-green-bright-o {
+    color: $green-dark;
+    background: #fff;
+    border: $violet-d 1px solid;
+
+}
+.btn-green-bright-o:hover {
+  background: #fff;
+  color: $green-bright;
+
+}
+.btn-green-bright-o:focus, .btn-green.focus {
+    box-shadow: 0px 0px 9px #9adebc;
+}
+
+/* GREEN OUTLINE */
+.btn-green-outline {
+    color: $green;
+    background: #fff;
+    border: 2px $green solid;
+}
+.btn-green-outline:hover {
+  background: $green;
+  color: #fff;
+
+}
+.btn-green-outline:focus, .btn-green-outline.focus {
+    box-shadow: 0px 0px 9px #9adebc;
+}
+
+/*Violet button white text*/
+.btn-violet {
+  color: #fff;
+  background: $violet;
+  font-weight: bold;
+  border: $violet 2px solid;
+
+}
+.btn-violet:hover {
+  background: #fff;
+  color: $violet;
+}
+.btn-violet:focus, .btn-sm-9.focus {
+    box-shadow: 0px 0px 9px #CD88AF;
+}
+
+/*Transparent button with violet border and text*/
+.btn-violet-outline {
+  color: $violet;
+  background: transparent;
+  border: $violet 2px solid;
+  font-weight: bold;
+
+}
+.btn-violet-outline:hover {
+  background: $violet;
+  color: #fff
+}
+.btn-violet-outline:focus, .btn-sm-9.focus {
+    box-shadow: 0px 0px 9px #CD88AF;
+}
+
+/*Transparent button with violet-d border and text*/
+.btn-violet-d-outline {
+  color: #fff;
+  background: $violet-d;
+  border: $violet 2px solid;
+}
+.btn-violet-d-outline:hover {
+  background: #fff;
+  color: $violet;
+}
+.btn-violet-d-outline:focus, .btn-violet-d-outline.focus {
+    box-shadow: 0px 0px 9px #CD88AF;
+}
+
+/*White button with shadow and violet color*/
+.btn-white {
+    border-radius: 15px;
+    color: $violet;
+    font-weight: bold;
+    background: #fff;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+.btn-white:hover {
+    background: $violet;
+    color: #fff;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+.btn-white:focus, .btn-white:focus {
+    box-shadow: 0 0 0 0.2rem #9edfbe;
+}
+
+/*White button with shadow and red color*/
+.btn-white-r {
+    border-radius: 15px;
+    color: #8e1717;
+    font-weight: bold;
+    background: #fff;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+.btn-white-r:hover {
+    background: #8e1717;
+    color: #fff;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+.btn-white-r:focus, .btn-white-r:focus {
+    box-shadow: 0 0 0 0.2rem #9edfbe;
+}
+
+/* White button with green text*/
+.btn-white-g {
+    border-radius: 15px;
+    color: $green-bright;
+    background: #fff;
+    border: #cccccc 2px solid;
+}
+.btn-white-g:hover {
+    background: $green-bright;
+    color: #fff;
+}
+.btn-white-g:focus, .btn-white:focus {
+    box-shadow: 0 0 0 0.2rem #9edfbe;
+}
+
+
+
 
 /***************************************************************/
 /******************* END OF BUTTONS ****************************/
@@ -133,7 +200,7 @@ body {
 // When someone focuses this input the shadow/border is green
 input.box-shadow-green:focus {
     box-shadow: 0 0 .5em #9adebc;
-    border-color: $dark-green;
+    border-color: $green;
 }
 
 
@@ -154,7 +221,7 @@ input.box-shadow-green:focus {
 }
 
 .back-arrow-btn {
-    background: #fff;
+    background: transparent;
 }
 
 

@@ -2,68 +2,130 @@
 
 <div class="container">
 
-    <header class="jumbotron">
+    <div class="row index-header-row">
 
-            <h1>What are you looking for?</h1>
-            
+        <div class="index-buy-col col-lg-9 col-md-9 col-sm-12">
+
+            <h3>Find your perfect clubs!</h3>
 
 
+            <form action="/posts/search">
 
-            <a class="btn btn-light-gray" href="/posts/new">Create New Post</a>
+                <div class="form-group search-form-grp">
 
-    </header>
+                    <input
+                           class="form-control box-shadow-green search-input"
+                           type="text"
+                           name="search-terms"
+                           placeholder="Search not ready yet...">
+
+
+                    <button type="submit" class="btn btn-green-bright btn-block btn-search">Search</button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+
+        <div class="index-filter-col col-lg-3 col-md-3 col-sm-12">
+
+                <p class="index-create-header">Or...</p>
+
+
+                <a class="btn btn-sm create-post btn-violet-outline" href="/posts/new">
+                    + Create Post
+                </a>
+
+        </div>
+
+    </div>
 
 
     <div class="row">
 
-        <% posts.forEach(function(post){ %>
+        <div class="col-lg-3 col-md-3 col-sm-12">
 
-            <div class="col-lg-4 col-md-6 col-sm-12">
+            <p class="filter">
+                FILTER INFO GOES HERE, should have dropdown functionality
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean aliquam
+                facilisis ligula sit amet tempus. Ut tortor tortor, suscipit ut lectus et,
+                dapibus dictum sem. In hac habitasse platea dictumst. Mauris tempus nulla odio,
+                eget molestie odio efficitur at. In hac habitasse platea dictumst. Donec tempor
+                volutpat felis, id pharetra felis. Nulla volutpat nisl vel elit rhoncus finibus.
+                Quisque scelerisque feugiat posuere. Sed a orci nisi. Nunc tempus tincidunt
+                laoreet. Phasellus in elit elementum, sodales lorem ut, pharetra dui. Vestibulum
+                ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;
+                Ut scelerisque justo non risus pellentesque posuere. Donec finibus mi vitae
+                ornare consequat. Nulla facilisi. Sed mollis arcu nec lectus gravida,
+                in aliquam velit mollis. Proin porttitor metus urna, ut tristique ex
+                finibus a. Donec lacus nulla, tempor sed venenatis nec, faucibus vitae
+                justo. Etiam dapibus elementum neque, consectetur pulvinar dolor congue quis.
+                Mauris ut massa metus. Fusce venenatis mi sed neque eleifend vestibulum.
+                Morbi vel ornare ante.
+            </p>
 
-                <!--// Posts -->
-                <div class="card index-card">
-
-                    <img src="<%= post.image %>">
-
-
-                    <div class="card-body">
-
-                        <!-- Short description of what is being sold -->
-                        <div><%= post.title %></div>
-
-
-                        <!-- States who made post and links to their profile -->
-                        <div>
-
-                            <span class="posted-by"> posted by:</span>
-
-                            <a href="/profile/<%= post.seller.id %>" class="author-link">
-                                <%= post.seller.username %>
-                            </a>
-
-                        </div>
-
-                        <!-- Section for the More Info button and price info -->
-                        <div class="index-card-footer">
-
-                            <!-- More info button -->
-                            <a href="/posts/<%= post._id %>"
-                            class="btn btn-light-gray-2">More Info</a>
+        </div>
 
 
-                            <!-- Price display -->
-                            <span class="index-price">
+        <div class="col-lg-9 col-md-9 col-sm-12">
 
-                                <span class="index-price-price">price: </span> $69.97
+            <div class="row">
 
-                            </span>
+                <% posts.forEach(function(post){ %>
 
+                    <div class="col-lg-4 col-md-6 col-sm-12">
+
+                        <!--// Posts -->
+                        <div class="card index-card">
+
+                            <img src="<%= post.image %>">
+
+
+                            <div class="card-body">
+
+                                <!-- Short description of what is being sold -->
+                                <div><%= post.title %></div>
+
+
+                                <!-- States who made post and links to their profile -->
+                                <div>
+
+                                    <span class="posted-by"> posted by:</span>
+
+                                    <a href="/profile/<%= post.seller.id %>" class="author-link">
+                                        <%= post.seller.username %>
+                                    </a>
+
+                                </div>
+
+                                <!-- Section for the More Info button and price info -->
+                                <div class="index2-card-footer">
+
+                                    <!-- More info button -->
+                                    <a href="/posts/<%= post._id %>"
+                                    class="btn btn-white-g">More Info</a>
+
+
+                                    <!-- Price display -->
+                                    <span class="index-price">
+
+                                         $69.97
+
+                                    </span>
+
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
+                <% }); %>
             </div>
-        <% }); %>
+        </div>
+
     </div>
 </div>
+
+
 
 <% include ../partials/footer %>

@@ -1,24 +1,29 @@
-
 @import "variables";
 
 /* Nav bar for landing page */
 .header-bg-landing {
-    background: $dark-green;
+    // background: $dark-green;
     color: #fff;
+    background: $green;
+    background: linear-gradient(90deg, $green 0%, $yellow-green 100%);
+
 }
 
 
 /* Jumbotron on landing page */
 .landing-jumbo {
     padding-top: 2em;
-    background: $dark-green;
+    // background: $dark-green;
+    background: $green;
+    background: linear-gradient(90deg, $green 0%, $yellow-green 100%);
     color: #fff;
 }
 
 
+
 /* Welcome to TGC */
 .landing-h1 {
-    font-family: $aleg;
+    font-family: $merri;
     color: #fff;
 }
 
@@ -34,4 +39,8 @@
 .landing-desc-2 {
     margin-bottom: 1.5em;
     color: #fff;
+}
+
+.signup-header {
+    margin-bottom: 1em;
 }

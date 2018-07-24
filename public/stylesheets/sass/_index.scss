@@ -1,1 +1,37 @@
 @import "variables";
+
+.btn-search {
+    margin-top: .5em;
+}
+
+.index-header-row {
+    margin-top: 1em;
+    // background: linear-gradient(to right, #fff, $green-mint);
+}
+
+
+div.search-form-grp input {
+    width: 100%;
+}
+
+.index-buy-col {
+    padding: 1em;
+
+
+
+}
+
+.index-filter-col {
+    padding: 1em;
+    color: $green-dark;
+
+
+}
+
+.index-create-header {
+
+}
+
+.btn-more-info {
+    font-weight: normal;
+}
