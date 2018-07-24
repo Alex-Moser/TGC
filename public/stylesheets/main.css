@@ -3,6 +3,7 @@
 /*Violet*/
 /*Red*/
 /*green*/
+/*greyscale*/
 /*Font Variables*/
 /* Nav bar for landing page */
 .header-bg-landing {
@@ -46,13 +47,17 @@
 /*Violet*/
 /*Red*/
 /*green*/
+/*greyscale*/
 /*Font Variables*/
 .btn-search {
   margin-top: 0.5em;
 }
 
 .index-header-row {
+  border-radius: 10px;
   margin-top: 1em;
+  padding-bottom: 1em;
+  border: #ebebeb 2px solid;
 }
 
 div.search-form-grp input {
@@ -60,29 +65,21 @@ div.search-form-grp input {
 }
 
 .index-buy-col {
+  color: #3d3d3d;
   padding: 1em;
 }
 
-.index-filter-col {
-  padding: 1em;
-  color: #116611;
-}
-
-.btn-more-info {
-  font-weight: normal;
+.filter {
+  color: #5c5c5c;
 }
 
 body {
   font-family: "Merriweather Sans", sans-serif;
-  color: #5c645c;
+  color: #7a7a7a;
 }
 
 /* NAVBAR */
 /* navbar  background color */
-.nav-bg {
-  background: #fff;
-}
-
 /* Navbar text */
 #backArrow,
 #brand {
@@ -92,8 +89,7 @@ body {
 
 #login,
 #register,
-#myprofile,
-#logout {
+#myProfile {
   color: #2ede2e;
 }
 
@@ -117,6 +113,7 @@ body {
 
 /* Bright Green button white color */
 .btn-green-bright {
+  border-radius: 2px;
   color: #fff;
   background: #2ede2e;
   font-weight: bold;
@@ -184,6 +181,7 @@ body {
 
 /*Transparent button with violet border and text*/
 .btn-violet-outline {
+  border-radius: 20px;
   color: #cd00cd;
   background: transparent;
   border: #cd00cd 2px solid;
@@ -255,10 +253,10 @@ body {
 
 /* White button with green text*/
 .btn-white-g {
-  border-radius: 15px;
-  color: #2ede2e;
+  border-radius: 5px;
+  color: #7a7a7a;
   background: #fff;
-  border: #cccccc 2px solid;
+  border: #ebebeb 3px solid;
 }
 
 .btn-white-g:hover {
