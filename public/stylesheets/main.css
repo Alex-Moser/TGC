@@ -49,48 +49,46 @@
 /*green*/
 /*greyscale*/
 /*Font Variables*/
-.btn-search {
-  margin-top: 0.5em;
+.post-index-c {
+  padding-top: 1em;
+  background: #faf9fa;
+  box-shadow: inset 3px 0 2px #cccccc;
 }
 
-.index-header-row {
-  border-radius: 10px;
-  margin-top: 1em;
-  padding-bottom: 1em;
-  border: #ebebeb 2px solid;
+/* Column for filter utilities */
+.filter-c {
+  padding-top: 1em;
 }
 
-div.search-form-grp input {
-  width: 100%;
-}
+/***** Naming Conventions *****
 
-.index-buy-col {
-  color: #3d3d3d;
-  padding: 1em;
-}
+    [class name]-r => row
 
-.filter {
-  color: #5c5c5c;
-}
+    [class name]-c => column
 
+******************************/
 body {
   font-family: "Merriweather Sans", sans-serif;
   color: #7a7a7a;
 }
 
 /* NAVBAR */
-/* navbar  background color */
+nav.my-navbar {
+  border-bottom: 1px solid #cccccc;
+}
+
 /* Navbar text */
 #backArrow,
 #brand {
   font-weight: bold;
-  color: #2ede2e;
+  color: #1AA61A;
 }
 
 #login,
 #register,
+#createPost,
 #myProfile {
-  color: #2ede2e;
+  color: #1AA61A;
 }
 
 /* BUTTONS ****************************/
@@ -299,7 +297,7 @@ input.box-shadow-green:focus {
 /* -------------------Index of Posts Custom Classes--------------------*/
 /* Card for each post */
 .index-card {
-  margin: 1.5em auto;
+  margin: auto auto 10%;
   max-width: 18em;
   max-height: 30em;
   padding: 0.2em;
