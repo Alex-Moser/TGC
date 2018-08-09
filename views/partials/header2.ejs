@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>TheGolfClub</title>
+    <!-- FontAwesome -->
+    <link rel="stylesheet"
+          href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
+          integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
+          crossorigin="anonymous">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="/bootstrap-4.1.1-dist/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans|Alegreya+Sans+SC|Merriweather|Merriweather+Sans|Quattrocento:400,700|Alegreya" rel="stylesheet">
+    <!-- main.css -->
+    <link rel="stylesheet" href="/stylesheets/main.css">
+  </head>
+  <body>
+
+
+    <!-- Flash Messages -->
+    <div class="container">
+    <% if(error && error.length > 0){ %>
+          <div class="alert alert-danger" role="alert">
+              <%=error%>
+          </div>
+      <%}%>
+    <% if(success && success.length >0){ %>
+          <div class="alert alert-success" role="alert">
+              <%=success%>
+          </div>
+      <%}%>
+    </div>

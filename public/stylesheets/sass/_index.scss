@@ -1,19 +1,135 @@
 @import "variables";
 
-.index-main-r {
 
-}
-
-
-
+/* Posts ----------------------------*/
+/* Col space for posts */
 .post-index-c {
     padding-top: 1em;
     background: $violet-bg;
-    box-shadow: inset 3px 0 2px $grey-l2;
+    padding-left: auto;
 }
 
-/* Column for filter utilities */
-.filter-c {
-    padding-top: 1em;
+/* Card for each post */
+.index-card {
+    margin: auto 1em 10%;
+    max-width: 18em;
+    min-width: 14em;
+    max-height: 100%;
+    padding: .2em;
+    border-width: 1px;
+}
+/* Main img for each post */
+.index-card img {
+    max-height: 12em;
+    max-width: 18em;
+}
 
+/*-------------Details of post------------*/
+
+.card-body {
+    padding: 0;
+    color: #666666;
+}
+
+/* Price of posted item(s) */
+.index-price-price {
+    font-size: .8em;
+}
+
+.index-price {
+    font-size: 1.2em;
+    padding-left: 1em;
+}
+
+/* Author of post */
+.author-link {  /* username link */
+    vertical-align: top;
+    color: #a6a6a6;
+    font-size: .8em;
+}
+
+.author-link:hover {
+    vertical-align: top;
+    color: #cccccc;
+}
+
+.posted-by {  /* 'posted by:' */
+    vertical-align: top;
+    font-size: .7em;
+    color: #b3b3b3;
+}
+
+
+
+/* Column for filter utilities and nav ---------------------------*/
+/* Don't display sidebar on <768px screen*/
+.sidebar {
+    display: none;
+}
+/* Display filter column on >768px screen*/
+@media (min-width: 768px) {
+    .sidebar {
+        animation-duration: 1.5s;
+        animation-name: slidein;
+        box-shadow: 2px 0 3px $grey-l2;
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 14em;
+        background: #fff;
+        height: 100%;
+    }
+
+    @keyframes slidein {
+        from {
+
+
+            width: 0;
+        }
+
+        to {
+
+
+
+            width: 14em;
+        }
+    }
+    /* Move other page column over
+       to make room for filter column */
+    .post-index-c {
+        animation-duration: 1.5s;
+        animation-name: slidein2;
+        padding-left: 14em;
+    }
+
+    @keyframes slidein2 {
+        from {
+            margin-left: -14em;
+            width: 100%
+        }
+
+        to {
+            margin-left: 0;
+            width: 100%;
+        }
+    }
+}
+
+.logo {
+    animation-duration: 1.5s;
+    animation-name: slidein2;
+    color: $green;
+    padding: .5em 0 .5em 1em;
+}
+
+
+/* Rm vrt mrgns of menu btns*/
+#sidebar-btn-1, #sidebar-btn-2,
+#sidebar-btn-3, #sidebar-btn-4 {
+    animation-duration: 1.5s;
+    animation-name: slidein2;
+    border-radius: 0;
+    margin: 0;
 }

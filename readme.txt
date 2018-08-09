@@ -31,6 +31,58 @@ for condition
 
 
 
+fixed position Left side menu (doesnt scroll)
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-fluid">
+    <!-- Index of Posts -->
+    <div class="post-index-c col-9">
+        <div class="row">
+            <% posts.forEach(function(post){ %>
+                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12">
+                    <!--// Posts -->
+                    <div class="card index-card">
+                        <img src="<%= post.image %>">
+
+                        <div class="card-body">
+                            <!-- Short description of what is being sold -->
+                            <div><%= post.title %></div>
+
+                            <!-- States who made post and links to their profile -->
+                            <div>
+                                <span class="posted-by"> posted by:</span>
+                                <a href="/profile/<%= post.seller.id %>" class="author-link">
+                                    <%= post.seller.username %>
+                                </a>
+                            </div>
+
+                            <!-- Section for the More Info button and price info -->
+                            <div class="index2-card-footer">
+                                <!-- More info button -->
+                                <a href="/posts/<%= post._id %>"
+                                class="btn btn-white-g">More Info</a>
+
+                                <!-- Price display -->
+                                <span class="index-price">
+                                     $69.97
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <% }); %>
+        </div>
+    </div>
+</div>
 
 
 

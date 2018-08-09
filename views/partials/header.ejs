@@ -18,7 +18,7 @@
   </head>
   <body>
       <!-- bootstrap navbar -->
-      <nav class="my-navbar bg-white rounded navbar navbar-expand-md nav-bg navbar-light">
+      <nav class="sticky-top my-navbar bg-white rounded navbar navbar-expand-md nav-bg navbar-light">
           <!-- Back Arrow -->
           <button type="button" class="btn btn-default back-arrow-btn"
                   onclick="goBack()">
@@ -62,6 +62,7 @@
               </ul>
           </div>
       </nav>
+
       <!-- Flash Messages -->
       <div class="container">
       <% if(error && error.length > 0){ %>

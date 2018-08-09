@@ -165,8 +165,11 @@ nav.my-navbar {
     color: #fff;
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 }
-.btn-white:focus, .btn-white:focus {
+.btn-white:focus, .btn-white.focus {
     box-shadow: 0 0 0 0.2rem #9edfbe;
+    background: $violet;
+    color: #fff;
+
 }
 
 /*White button with shadow and red color*/
@@ -237,54 +240,7 @@ input.box-shadow-green:focus {
 }
 
 
-/* -------------------Index of Posts Custom Classes--------------------*/
-/* Card for each post */
-.index-card {
-    margin: auto auto 10%;
-    max-width: 18em;
-    max-height: 30em;
-    padding: .2em;
-    border-width: 1px;
-}
-.index-card img {
-    max-height: 100%;
-    max-width: 100%;
-}
 
-/*-------------Details of post------------*/
-
-.card-body {
-    padding: 0;
-    color: #666666;
-}
-
-/* Price of posted item(s) */
-.index-price-price {
-    font-size: .8em;
-}
-
-.index-price {
-    font-size: 1.2em;
-    padding-left: 1em;
-}
-
-/* Author of post */
-.author-link {  /* username link */
-    vertical-align: top;
-    color: #a6a6a6;
-    font-size: .8em;
-}
-
-.author-link:hover {
-    vertical-align: top;
-    color: #cccccc;
-}
-
-.posted-by {  /* 'posted by:' */
-    vertical-align: top;
-    font-size: .7em;
-    color: #b3b3b3;
-}
 /*----------------Show Post Custom Classes ------------*/
 
 .list-group-item-gray {
