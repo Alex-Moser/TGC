@@ -28,7 +28,7 @@ var upload = multer({ storage: imageStorage, fileFilter: imageFilter});
 // Cloudinary Set-Up
 cloudinary.config({
   cloud_name: 'tgc-cloud',
-  api_key: process.env.113963465331397,
+  api_key: process.env.CLOUDINARY_API_KEY,
   api_secret: process.env.CLOUDINARY_API_SECRET
 });
 
@@ -47,7 +47,7 @@ router.get('/posts', function(req, res){
 
 // CREATE - Add new Post to db.
 router.post('/posts', middleware.isLoggedIn, upload.single('image'), function(req, res){
-    cloudinary.uploader.upload(req.file.path, function(err, result){
+    cloudinary.v2.uploader.upload(req.file.path, function(err, result){
         if (err) {
             console.log(err);
         }
