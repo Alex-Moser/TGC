@@ -31,7 +31,7 @@ var commentRoutes   = require('./routes/comments'),
 
 // Conect to Post_yep db (database), if no db, creates one (i.e. the first time)
 // mongoose.connect('mongodb://localhost/tgc');
-var uri = process.env.DB_URI; // havent tested
+var uri = process.env.DB_URI;
 
 
 mongoose.connect(uri, {
