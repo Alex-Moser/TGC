@@ -4,9 +4,11 @@ var Post = require('../models/post');
 var User = require('../models/user');
 var middleware = require('../middleware');
 
+// File utilities
 var   fs            = require('fs'),
       multer        = require('multer'),
       cloudinary    = require('cloudinary');
+
 
 // Multer Set-Up
 var imageStorage = multer.diskStorage({
@@ -15,8 +17,8 @@ var imageStorage = multer.diskStorage({
   }
 });
 
+// Create image filter that rejects non image filetypes
 var imageFilter = function (req, file, cb) {
-  // reject non-image file types
   if (!file.originalname.match(/\.(jpg|jpeg|png|gif)$/i)) {
       return cb(new Error('Only image files are allowed'), false);
   }
@@ -24,6 +26,7 @@ var imageFilter = function (req, file, cb) {
 };
 
 var upload = multer({ storage: imageStorage, fileFilter: imageFilter});
+
 
 // Cloudinary Set-Up
 cloudinary.config({
@@ -45,33 +48,48 @@ router.get('/posts', function(req, res){
     });
 });
 
+
 // CREATE - Add new Post to db.
 router.post('/posts', middleware.isLoggedIn, upload.single('image'), function(req, res){
     cloudinary.v2.uploader.upload(req.file.path, function(err, result){
+        // Handle any upload errors
         if (err) {
             console.log(err);
         }
 
-        var format = result.format;
+        // adds an imageId object to body that identifies photo in cloudinary
         req.body.imageId = result.public_id;
         var imageId = req.body.imageId;
+
+        // format=filetype suffix
+        var format = result.format;
+        // The file name of the cloudinary image for reference in transform url.
         var imageCloudFileName = imageId + "." + format;
 
         /* Now we want to transform the image
          to a 250px by 250px square with fill mode. */
         req.body.image = 'https://res.cloudinary.com/tgc-cloud/image/upload/c_fill,g_center,h_250,r_0,w_250/' + imageCloudFileName;
+        // We set image url equal to the 250x250 fill mode version
+        var image = req.body.image;
 
         // Defines remaining variables
         var title = req.body.title;
-        var image = req.body.image;
-        // Description from HTML form.
         var desc = req.body.description;
         var seller = {
             id: req.user._id,
             username: req.user.username
         }
+
         // Creates an object with these values.
-        var newPost = {title: title, image: image, description: desc, seller: seller};
+        var newPost = {
+            title: title,
+            image: image,
+            imageId: imageId,
+            description: desc,
+            seller: seller
+        };
+        /* Find db instance of user that created
+           the post to change relevant values */
         User.findById(req.user._id).populate('users').exec(function(err, foundUser){
             if(err) {
                 console.log(err)
@@ -79,12 +97,12 @@ router.post('/posts', middleware.isLoggedIn, upload.single('image'), function(re
             // Create new Post and save to DB
             Post.create(newPost, function(err, newlyCreated){
                 if(err){
-                    console.log(err);   // log any error
+                    console.log(err); // log any error
                 } else {
                     newlyCreated.save();
                     foundUser.items_posted.push(newlyCreated);
                     foundUser.save();
-                    res.redirect('/posts');    // redirect to posts page if no errors.
+                    res.redirect('/posts'); // redirect to posts page if no errors.
                 }
             });
             }
