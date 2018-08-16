@@ -28,8 +28,8 @@ var upload = multer({ storage: imageStorage, fileFilter: imageFilter});
 // Cloudinary Set-Up
 cloudinary.config({
   cloud_name: 'tgc-cloud',
-  api_key: process.env.CLOUDINARY_API_KEY,
-  api_secret: process.env.CLOUDINARY_API_SECRET
+  api_key: '113963465331397',
+  api_secret: 'L9PUKAKjJQirDqZze3nCeXybyA4'
 });
 
 
