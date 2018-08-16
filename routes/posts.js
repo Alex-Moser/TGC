@@ -47,7 +47,7 @@ router.get('/posts', function(req, res){
 
 // CREATE - Add new Post to db.
 router.post('/posts', middleware.isLoggedIn, upload.single('image'), function(req, res){
-    cloudinary.v2.uploader.upload(req.file.path, function(err, result){
+    cloudinary.uploader.upload(req.file.path, function(err, result){
         if (err) {
             console.log(err);
         }
