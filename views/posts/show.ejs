@@ -29,11 +29,11 @@
                     <!-- Link to Seller's Profile page. -->
                     <div>
 
-                        <a class="btn btn-light-gray-2"
+                        <a class="btn view-prof-btn btn-green-outline"
                            href="/profile/<%=post.seller.id%>">
                             View <%= post.seller.username %>'s profile
                         </a>
-                        <a class="btn btn-light-gray-2b" href="/posts/<%=post._id%>/purchase">
+                        <a class="purchase-btn btn btn-green" href="/posts/<%=post._id%>/purchase">
                             Purchase
                         </a>
                     </div>
@@ -41,12 +41,12 @@
                          created the post -->
                  <% if(currentUser && post.seller.id.equals(currentUser._id)){ %>
                      <div class="edit-delete-btn-group">
-                         <a class="btn btn-xs btn-light"
+                         <a class="btn btn-xs btn-violet-outline"
                             href="/posts/<%= post._id%>/edit">Edit</a>
                          <form class="delete-form"
                                action="/posts/<%=post._id%>?_method=DELETE"
                                method="POST">
-                             <button class="btn btn-xs btn-secondary">
+                             <button class="btn btn-xs btn-danger">
                                  Delete
                              </button>
                          </form>
@@ -61,7 +61,7 @@
                 <div class="container">
                     <h2 class="comment-section-header">Comments</h2>
 
-                    <a class="btn btn-outline-gray comment-btn"
+                    <a class="btn btn-violet-outline comment-btn"
                         href="/posts/<%=post._id%>/comments/new">
                         Add a comment
                     </a>

@@ -2,6 +2,7 @@
    to the variable 'app'. */
 var express         = require('express'),
     app             = express(),
+    dotenv          = require('dotenv').config(),
     bodyParser      = require('body-parser'),
     mongoose        = require('mongoose'),
     flash           = require('connect-flash'),
@@ -13,7 +14,12 @@ var express         = require('express'),
     User            = require('./models/user'),
     Message         = require('./models/message'),
     Coversation     = require('./models/conversation'),
-    moment          = require('moment')
+    moment          = require('moment'),
+    fs              = require('fs'),
+    multer          = require('multer'),
+    cloudinary      = require('cloudinary');
+
+
 
 
 
@@ -21,11 +27,11 @@ var express         = require('express'),
 var commentRoutes   = require('./routes/comments'),
     postRoutes      = require('./routes/posts'),
     indexRoutes     = require('./routes/index'),
-    messageRoutes   = require('./routes/messages')
+    messageRoutes   = require('./routes/messages');
 
 // Conect to Post_yep db (database), if no db, creates one (i.e. the first time)
 // mongoose.connect('mongodb://localhost/tgc');
-var uri = 'mongodb://alexandertmoser:god727@ds235311-a0.mlab.com:35311,ds235311-a1.mlab.com:35311/tgc?replicaSet=rs-ds235311';
+var uri = process.env.DB_URI; // havent tested
 
 
 mongoose.connect(uri, {
@@ -37,13 +43,12 @@ mongoose.connect(uri, {
 
 
 // Get Mongoose to use the global promise library - TODO:async callback cleanup.
-// mongoose.Promise = global.Promise;
+mongoose.Promise = global.Promise;
 
 //Get the default connection
 var db = mongoose.connection;
 //Bind connection to error event (to get notification of connection errors)
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));
-
 
 app.use(bodyParser.urlencoded({extended:true}));    // Body-parser boiler plate.
 app.set('view engine', 'ejs');  // Assumes local files are .ejs files.
@@ -78,6 +83,9 @@ app.use('/', indexRoutes);
 app.use('/posts/:id/comments', commentRoutes);
 app.use(postRoutes);
 app.use(messageRoutes);
+
+
+
 
 // Listens on local server and notes this in terminal.
 // app.listen(3000, () => console.log('Server has started.'));

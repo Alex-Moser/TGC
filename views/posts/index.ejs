@@ -1,6 +1,6 @@
-<% include ../partials/header2 %>
+<% include ../partials/header %>
 
-<div class="container-fluid">
+<div class="container">
     <!-- Index of Posts -->
     <div class="post-index-c">
         <div class="row">
@@ -9,11 +9,9 @@
                     <!--// Posts -->
                     <div class="card index-card">
                         <img src="<%= post.image %>">
-
                         <div class="card-body">
                             <!-- Short description of what is being sold -->
                             <div><%= post.title %></div>
-
                             <!-- States who made post and links to their profile -->
                             <div>
                                 <span class="posted-by"> posted by:</span>
@@ -21,13 +19,11 @@
                                     <%= post.seller.username %>
                                 </a>
                             </div>
-
                             <!-- Section for the More Info button and price info -->
                             <div class="index2-card-footer">
                                 <!-- More info button -->
                                 <a href="/posts/<%= post._id %>"
                                 class="btn btn-white-g">More Info</a>
-
                                 <!-- Price display -->
                                 <span class="index-price">
                                      $69.97
@@ -40,60 +36,93 @@
         </div>
     </div>
 
-    <div class="sidebar justify-content-between">
+    <!-- Dynamic sidebar with a fixed left position -->
+    <!-- <div class="sidebar show-sidebar">
+
         <div class="logo">
             <h2 class="brand-title">TheGolfClub</h2>
 
             <h4>Filter Options</h4>
-        </div>
+        </div> -->
 
-        <!-- If no user is logged in -->
-        <% if (!currentUser) { %>
-            <!-- This div groups the buttons as one flex item -->
-            <div>
-                <a class="btn btn-block btn-outline-secondary"
-                   id="sidebar-btn-1"
-                   href="#"> Hide </a>
+        <!-- Sidebar buttons if no user is logged in -->
+        <!-- <% if (!currentUser) { %>
+             This div groups the buttons as one flex item
+            <div class="sidebar-btn-group">
+                <a id="hideSidebar"
+                   class="btn btn-block btn-outline-secondary">
+                    <span class="sidebar-btn-text">
+                        <i class="fas fa-angle-left"></i>
+                        Hide
+                    </span>
+                    <span class="sidebar-btn-icon">
+                        <i class="fas fa-angle-right"></i>
+                    </span>
+                </a>
 
                 <a class="btn btn-block btn-outline-success"
-                   id="sidebar-btn-2"
-                   href="/login"> Login </a>
+                   id="sidebarBtn2"
+                   href="/login">
+                   <span class="sidebar-btn-text">
+                       Login
+                   </span>
+                   <span class="sidebar-btn-icon">
+                       <i class="fas fa-user"></i>
+                   </span>
+               </a>
 
                 <a class="btn btn-block btn-outline-success"
-                   id="sidebar-btn-3"
-                   href="/register"> Sign up </a>
+                   id="sidebarBtn3"
+                   href="/register">
+                   <span class="sidebar-btn-text">
+                       Signup
+                   </span>
+                   <span class="sidebar-btn-icon">
+                       <i class="fas fa-user-plus"></i>
+                   </span>
+               </a>
+
             </div>
 
-        <!-- If a user is logged in -->
+         Sidebar btns if a user is logged in
         <% } else { %>
-            <div>
-                <a class="btn btn-block btn-outline-secondary"
-                   id="sidebar-btn-1"
-                   href="#">
-                    Hide
+            <div class="sidebar-btn-group">
+                <a id="hideSidebar"
+                   class="btn btn-block btn-outline-secondary">
+                   <span class="sidebar-btn-text">
+                       Hide
+                   </span>
                 </a>
 
                 <a class="btn btn-block btn-outline-secondary"
-                   id="sidebar-btn-2"
+                   id="sidebarBtn2"
                    href="/posts/new">
-                    Create Post
+                   <span class="sidebar-btn-text">
+                       Create Post
+                   </span>
                 </a>
 
                 <a class="btn btn-block btn-outline-success"
-                   id="sidebar-btn-3"
+                   id="sidebarBtn3"
                    href="/profile/<%= currentUser._id %>">
-                    My Profile
+                   <span class="sidebar-btn-text">
+                       My Profile
+                   </span>
                 </a>
 
                 <a class="btn btn-block btn-outline-success"
-                   id="sidebar-btn-4"
+                   id="sidebarBtn4"
                    href="/logout/<%= currentUser.id %>">
-                    Logout
+                   <span class="sidebar-btn-text">
+                       Logout
+                   </span>
                 </a>
             </div>
         <% } %>
-    </div>
+    </div> -->
+
 </div>
+
 
 
 <% include ../partials/footer %>

@@ -4,6 +4,41 @@ var Post = require('../models/post');
 var User = require('../models/user');
 var middleware = require('../middleware');
 
+var   fs            = require('fs'),
+      multer        = require('multer'),
+      cloudinary    = require('cloudinary');
+
+// Multer Set-Up
+var imageStorage = multer.diskStorage({
+  filename: function(req, file, callback) {
+      callback(null, Date.now() + file.originalname);
+  }
+});
+
+var imageFilter = function (req, file, cb) {
+  // reject non-image file types
+  if (!file.originalname.match(/\.(jpg|jpeg|png|gif)$/i)) {
+      return cb(new Error('Only image files are allowed'), false);
+  }
+  cb(null, true);
+};
+
+var upload = multer({ storage: imageStorage, fileFilter: imageFilter});
+
+// Cloudinary Set-Up
+cloudinary.config({
+  cloud_name: 'tgc-cloud',
+  api_key: process.env.CLOUDINARY_API_KEY,
+  api_secret: process.env.CLOUDINARY_API_SECRET
+});
+
+
+// Get Image Upload Page
+router.get('/upload', function(req, res){
+  res.render('imageUpload');
+});
+
+
 // INDEX - Lists of all of the posts in our array with an image for each.
 router.get('/posts', function(req, res){
     // Get all posts from DB
@@ -17,33 +52,52 @@ router.get('/posts', function(req, res){
 });
 
 // CREATE - Add new Post to db.
-router.post('/posts', middleware.isLoggedIn, function(req, res){
-    var title = req.body.title;    // Defines var as title input from HTML form.
-    var image = req.body.image;     // Defines image input from HTML form.
-    var desc = req.body.description; // "" description from HTML form.
-    var seller = {
-        id: req.user._id,
-        username: req.user.username
-    }
-    // Creates an object with these values.
-    var newPost = {title: title, image: image, description: desc, seller: seller};
-    User.findById(req.user._id).populate('users').exec(function(err, foundUser){
-        if(err) {
-            console.log(err)
-        } else {
-        // Create new Post and save to DB
-        Post.create(newPost, function(err, newlyCreated){
-            if(err){
-                console.log(err);   // log any error
+router.post('/posts', middleware.isLoggedIn, upload.single('image'), function(req, res){
+    cloudinary.v2.uploader.upload(req.file.path, function(err, result){
+        if (err) {
+            console.log(err);
+        }
+
+        var format = result.format;
+        req.body.imageId = result.public_id;
+        var imageId = req.body.imageId;
+        var imageCloudFileName = imageId + "." + format;
+
+        /* Now we want to transform the image
+         to a 250px by 250px square with fill mode. */
+        req.body.image = 'https://res.cloudinary.com/tgc-cloud/image/upload/c_fill,g_center,h_250,r_0,w_250/' + imageCloudFileName;
+
+        // Defines remaining variables
+        var title = req.body.title;
+        var image = req.body.image;
+        // Description from HTML form.
+        var desc = req.body.description;
+        var seller = {
+            id: req.user._id,
+            username: req.user.username
+        }
+        // Creates an object with these values.
+        var newPost = {title: title, image: image, description: desc, seller: seller};
+        User.findById(req.user._id).populate('users').exec(function(err, foundUser){
+            if(err) {
+                console.log(err)
             } else {
-                newlyCreated.save();
-                foundUser.items_posted.push(newlyCreated);
-                foundUser.save();
-                res.redirect('/posts');    // redirect to posts page if no errors.
+            // Create new Post and save to DB
+            Post.create(newPost, function(err, newlyCreated){
+                if(err){
+                    console.log(err);   // log any error
+                } else {
+                    newlyCreated.save();
+                    foundUser.items_posted.push(newlyCreated);
+                    foundUser.save();
+                    res.redirect('/posts');    // redirect to posts page if no errors.
+                }
+            });
             }
         });
-        }
-    });
+
+    })
+
 });
 
 // NEW - show form to create new Post

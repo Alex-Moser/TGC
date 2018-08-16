@@ -6,22 +6,22 @@
 .post-index-c {
     padding-top: 1em;
     background: $violet-bg;
-    padding-left: auto;
+    // padding-left: auto;
 }
 
 /* Card for each post */
 .index-card {
-    margin: auto 1em 10%;
-    max-width: 18em;
-    min-width: 14em;
-    max-height: 100%;
-    padding: .2em;
-    border-width: 1px;
+    margin-bottom: 2em;
+    width: 251px;
+    height: 350px;
+
 }
 /* Main img for each post */
 .index-card img {
-    max-height: 12em;
-    max-width: 18em;
+
+    height: 250px;
+    width: 250px;
+
 }
 
 /*-------------Details of post------------*/
@@ -60,76 +60,66 @@
 }
 
 
+/***************************************
+/**** SIDEBAR **************************
+***************************************/
 
-/* Column for filter utilities and nav ---------------------------*/
 /* Don't display sidebar on <768px screen*/
 .sidebar {
     display: none;
 }
+
+/* Hides right arrow icon until sidebar is hidden */
+span.sidebar-btn-icon > i.fa-angle-right {
+    opacity: 0;
+}
+
+
+/*** MEDIUM AND LARGER SCREEN CSS ****
+
+   On these size screens a sidebar
+   menu will be available on the left */
+
 /* Display filter column on >768px screen*/
-@media (min-width: 768px) {
-    .sidebar {
-        animation-duration: 1.5s;
-        animation-name: slidein;
-        box-shadow: 2px 0 3px $grey-l2;
-        display: flex;
-        flex-direction: column;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 14em;
-        background: #fff;
-        height: 100%;
-    }
+// @media (min-width: 768px) {
+//
+//     /* Move over posts column space
+//        to make room for filter column */
+//     .post-index-c {
+//         padding-left: 14em;
+//
+//     }
+//
+//     /* Sidebar when it is not hidden */
+//     .sidebar {
+//         animation: slide_show;
+//         animation-fill-mode: forwards;
+//         box-shadow: 2px 0 3px $grey-l2;
+//         display: flex;
+//         flex-direction: column;
+//         position: fixed;
+//         top: 0;
+//         left: 0;
+//         width: 14em;
+//         height: 100%;
+//         background: #fff;
+//     }
+//
+//     .logo {
+//         order: 0;
+//         color: $green;
+//         padding: .5em 0 .5em 1em;
+//     }
+//
+//
+// } /* end >768px screen condition */
 
-    @keyframes slidein {
-        from {
 
-
-            width: 0;
-        }
-
-        to {
-
-
-
-            width: 14em;
-        }
-    }
-    /* Move other page column over
-       to make room for filter column */
-    .post-index-c {
-        animation-duration: 1.5s;
-        animation-name: slidein2;
-        padding-left: 14em;
-    }
-
-    @keyframes slidein2 {
-        from {
-            margin-left: -14em;
-            width: 100%
-        }
-
-        to {
-            margin-left: 0;
-            width: 100%;
-        }
-    }
-}
-
-.logo {
-    animation-duration: 1.5s;
-    animation-name: slidein2;
-    color: $green;
-    padding: .5em 0 .5em 1em;
-}
 
 
 /* Rm vrt mrgns of menu btns*/
-#sidebar-btn-1, #sidebar-btn-2,
-#sidebar-btn-3, #sidebar-btn-4 {
-    animation-duration: 1.5s;
-    animation-name: slidein2;
+#hideSidebar, #sidebarBtn2,
+#sidebarBtn3, #sidebarBtn4 {
     border-radius: 0;
     margin: 0;
 }
