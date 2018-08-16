@@ -28,14 +28,8 @@ var upload = multer({ storage: imageStorage, fileFilter: imageFilter});
 // Cloudinary Set-Up
 cloudinary.config({
   cloud_name: 'tgc-cloud',
-  api_key: process.env.CLOUDINARY_API_KEY,
+  api_key: process.env.113963465331397,
   api_secret: process.env.CLOUDINARY_API_SECRET
-});
-
-
-// Get Image Upload Page
-router.get('/upload', function(req, res){
-  res.render('imageUpload');
 });
 
 
@@ -65,7 +59,7 @@ router.post('/posts', middleware.isLoggedIn, upload.single('image'), function(re
 
         /* Now we want to transform the image
          to a 250px by 250px square with fill mode. */
-        req.body.image = 'https://res.cloudinary.com/tgc-cloud/image/upload/c_fill,g_center,h_250,r_0,w_250/' + imageCloudFileName;
+        req.body.image = 'http://res.cloudinary.com/tgc-cloud/image/upload/c_fill,g_center,h_250,r_0,w_250/' + imageCloudFileName;
 
         // Defines remaining variables
         var title = req.body.title;
