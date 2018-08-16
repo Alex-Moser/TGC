@@ -37,7 +37,8 @@
 }
 
 .index-price {
-    font-size: 1.2em;
+    font-size: 1.2em;// format=filetype suffix
+        var format = result.format;
     padding-left: 1em;
 }
 
