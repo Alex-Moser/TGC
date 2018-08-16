@@ -59,7 +59,7 @@ router.post('/posts', middleware.isLoggedIn, upload.single('image'), function(re
 
         /* Now we want to transform the image
          to a 250px by 250px square with fill mode. */
-        req.body.image = 'http://res.cloudinary.com/tgc-cloud/image/upload/c_fill,g_center,h_250,r_0,w_250/' + imageCloudFileName;
+        req.body.image = 'https://res.cloudinary.com/tgc-cloud/image/upload/c_fill,g_center,h_250,r_0,w_250/' + imageCloudFileName;
 
         // Defines remaining variables
         var title = req.body.title;
