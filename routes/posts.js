@@ -29,18 +29,18 @@ var upload = multer({ storage: imageStorage, fileFilter: imageFilter});
 
 
 // Cloudinary Set-Up Local
-// cloudinary.config({
-//   cloud_name: 'tgc-cloud',
-//   api_key: '113963465331397',
-//   api_secret: 'L9PUKAKjJQirDqZze3nCeXybyA4'
-// });
-
-// Cloudinary Set-Up Heroku
 cloudinary.config({
   cloud_name: 'tgc-cloud',
-  api_key: process.env.CLOUDINARY_API_KEY,
-  api_secret: process.env.CLOUDINARY_API_SECRET
+  api_key: '113963465331397',
+  api_secret: 'L9PUKAKjJQirDqZze3nCeXybyA4'
 });
+
+// Cloudinary Set-Up Heroku
+// cloudinary.config({
+//   cloud_name: 'tgc-cloud',
+//   api_key: process.env.CLOUDINARY_API_KEY,
+//   api_secret: process.env.CLOUDINARY_API_SECRET
+// });
 
 // INDEX - Lists of all of the posts in our array with an image for each.
 router.get('/posts', function(req, res){
