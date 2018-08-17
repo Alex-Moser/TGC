@@ -1,0 +1,168 @@
+@import "variables";
+
+/* GREEN*/
+.btn-green {
+    color: #fff;
+    background: $green;
+    font-weight: bold;
+
+    &:hover {
+        background: #fff;
+        color: $green;
+        border: $green 2px solid;
+    }
+
+    &:active {
+        box-shadow: 0px 0px 9px $green-mint;
+        background: #fff;
+        color: $green;
+        border: $green 2px solid;
+    }
+}/* END GREEN
+
+
+/* Bright Green button white color */
+.btn-green-bright {
+    border-radius: 2px;
+    color: #fff;
+    background: $green-bright;
+    font-weight: bold;
+    border: $green 2px solid;
+}
+.btn-green-bright:hover {
+  background: #fff;
+  color: $green;
+  border: $green 2px solid;
+}
+.btn-green-bright:focus, .btn-green.focus {
+    box-shadow: 0px 0px 9px #9adebc;
+}
+/* Bright Green button white color */
+.btn-green-bright-o {
+    color: $green-dark;
+    background: #fff;
+    border: $violet-d 1px solid;
+
+}
+.btn-green-bright-o:hover {
+  background: #fff;
+  color: $green-bright;
+
+}
+.btn-green-bright-o:focus, .btn-green.focus {
+    box-shadow: 0px 0px 9px #9adebc;
+}
+
+/* GREEN OUTLINE */
+.btn-green-outline {
+    color: $green;
+    background: #fff;
+    border: 2px $green solid;
+}
+.btn-green-outline:hover {
+  background: $green;
+  color: #fff;
+
+}
+.btn-green-outline:focus, .btn-green-outline.focus {
+    box-shadow: 0px 0px 9px #9adebc;
+}
+
+/*Violet button white text*/
+.btn-violet {
+  color: #fff;
+  background: $violet;
+  font-weight: bold;
+  border: $violet 2px solid;
+
+}
+.btn-violet:hover {
+  background: #fff;
+  color: $violet;
+}
+.btn-violet:focus, .btn-sm-9.focus {
+    box-shadow: 0px 0px 9px #CD88AF;
+}
+
+/*Transparent button with violet border and text*/
+.btn-violet-outline {
+  border-radius: 20px;
+  color: $violet;
+  background: transparent;
+  border: $violet 2px solid;
+  font-weight: bold;
+
+}
+.btn-violet-outline:hover {
+  background: $violet;
+  color: #fff
+}
+.btn-violet-outline:focus, .btn-sm-9.focus {
+    box-shadow: 0px 0px 9px #CD88AF;
+}
+
+/*Transparent button with violet-d border and text*/
+.btn-violet-d-outline {
+  color: #fff;
+  background: $violet-d;
+  border: $violet 2px solid;
+}
+.btn-violet-d-outline:hover {
+  background: #fff;
+  color: $violet;
+}
+.btn-violet-d-outline:focus, .btn-violet-d-outline.focus {
+    box-shadow: 0px 0px 9px #CD88AF;
+}
+
+/*White button with shadow and violet color*/
+.btn-white {
+    border-radius: 15px;
+    color: $violet;
+    font-weight: bold;
+    background: #fff;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+.btn-white:hover {
+    background: $violet;
+    color: #fff;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+.btn-white:focus, .btn-white.focus {
+    box-shadow: 0 0 0 0.2rem #9edfbe;
+    background: $violet;
+    color: #fff;
+
+}
+
+/*White button with shadow and red color*/
+.btn-white-r {
+    border-radius: 15px;
+    color: #8e1717;
+    font-weight: bold;
+    background: #fff;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+.btn-white-r:hover {
+    background: #8e1717;
+    color: #fff;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+.btn-white-r:focus, .btn-white-r:focus {
+    box-shadow: 0 0 0 0.2rem #9edfbe;
+}
+
+/* White button with green text*/
+.btn-white-g {
+    border-radius: 5px;
+    color: $grey;
+    background: #fff;
+    border: $grey-l 3px solid;
+}
+.btn-white-g:hover {
+    background: $green-bright;
+    color: #fff;
+}
+.btn-white-g:focus, .btn-white:focus {
+    box-shadow: 0 0 0 0.2rem #9edfbe;
+}

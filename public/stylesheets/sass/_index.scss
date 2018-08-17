@@ -6,7 +6,6 @@
 .post-index-c {
     padding-top: 1em;
     background: $violet-bg;
-    // padding-left: auto;
 }
 
 /* Card for each post */
@@ -23,6 +22,7 @@
     width: 250px;
 
 }
+
 
 /*-------------Details of post------------*/
 
@@ -81,38 +81,53 @@ span.sidebar-btn-icon > i.fa-angle-right {
    menu will be available on the left */
 
 /* Display filter column on >768px screen*/
-// @media (min-width: 768px) {
-//
-//     /* Move over posts column space
-//        to make room for filter column */
-//     .post-index-c {
-//         padding-left: 14em;
-//
-//     }
-//
-//     /* Sidebar when it is not hidden */
-//     .sidebar {
-//         animation: slide_show;
-//         animation-fill-mode: forwards;
-//         box-shadow: 2px 0 3px $grey-l2;
-//         display: flex;
-//         flex-direction: column;
-//         position: fixed;
-//         top: 0;
-//         left: 0;
-//         width: 14em;
-//         height: 100%;
-//         background: #fff;
-//     }
-//
-//     .logo {
-//         order: 0;
-//         color: $green;
-//         padding: .5em 0 .5em 1em;
-//     }
-//
-//
-// } /* end >768px screen condition */
+@media (min-width: 768px) {
+    /* Card for each post */
+    .index-card {
+        margin-bottom: 2em;
+        width: 222px;
+        height: 320px;
+
+    }
+    /* Main img for each post */
+    .index-card img {
+
+        height: 220px;
+        width: 220px;
+
+    }
+
+    /* Move over posts column space
+       to make room for filter column */
+    .post-index-c {
+        padding-left: 14em;
+
+    }
+
+    /* Sidebar when it is not hidden */
+    .sidebar {
+        animation: slide_show;
+        animation-fill-mode: forwards;
+        box-shadow: 2px 0 3px $grey-l2;
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 14em;
+        height: 100%;
+        background: #fff;
+    }
+
+    /* TheGolfClub/TGC */
+    .logo {
+        order: 0;
+        color: $green;
+        padding: .5em 0 .5em 1em;
+    }
+
+
+} /* end >768px screen condition */
 
 
 
