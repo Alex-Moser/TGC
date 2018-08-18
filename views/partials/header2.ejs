@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
+<head>
     <meta charset="utf-8">
     <meta name="viewport"
           content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -15,20 +15,65 @@
     <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans|Alegreya+Sans+SC|Merriweather|Merriweather+Sans|Quattrocento:400,700|Alegreya" rel="stylesheet">
     <!-- main.css -->
     <link rel="stylesheet" href="/stylesheets/main.css">
-  </head>
-  <body>
-
-
-    <!-- Flash Messages -->
-    <div class="container">
-    <% if(error && error.length > 0){ %>
-          <div class="alert alert-danger" role="alert">
-              <%=error%>
-          </div>
-      <%}%>
-    <% if(success && success.length >0){ %>
-          <div class="alert alert-success" role="alert">
-              <%=success%>
-          </div>
-      <%}%>
+</head>
+<body>
+<!-- navbar with index-nav class for showing/hiding navbar -->
+<!-- bootstrap navbar -->
+<nav class="sticky-top my-navbar index-nav bg-white rounded navbar navbar-expand-md navbar-light">
+    <!-- Back Arrow -->
+    <button type="button" class="btn btn-default back-arrow-btn"
+            onclick="goBack()">
+        <i id="backArrow" class="fas fa-arrow-left"></i>
+    </button>
+    <!-- Brand -->
+      <a id="brand" class="navbar-brand" href="/">TheGolfClub</a>
+    <!-- Toggler (Hamburger icon) -->
+    <button id="toggler"
+            class="navbar-toggler"
+            data-target="#navbarToggler"
+            data-toggle="collapse"
+            type="button">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <!-- Display either login and sign-up or my profile and logout -->
+    <div class="collapse navbar-collapse justify-content-end"
+         id="navbarToggler">
+        <ul class="navbar-nav" >
+         <%  if(!currentUser){%>
+                  <li class="nav-item">
+                      <a id="login" class="nav-link" href="/login">Login</a>
+                  </li>
+                  <li class="nav-item">
+                      <a id="register" class="nav-link" href="/register">Sign-up</a>
+                  </li>
+           <% } else { %>
+               <li class="nav-item">
+                   <a id="createPost" class="nav-link" href="/posts/new">Create Post</a>
+               </li>
+                  <li class="nav-item">
+                      <a id="myProfile" class="nav-link"
+                         href="/profile/<%= currentUser._id %>">
+                          My Profile
+                      </a>
+                  </li>
+                  <li class="nav-item">
+                      <a id="logout" class="nav-link" href="/logout/<%=currentUser.id %>">Logout</a>
+                  </li>
+           <% } %>
+        </ul>
     </div>
+</nav>
+
+<!-- Flash Messages -->
+<div class="container">
+<% if(error && error.length > 0){ %>
+      <div class="alert alert-danger" role="alert">
+          <%=error%>
+      </div>
+  <%}%>
+<% if(success && success.length >0){ %>
+      <div class="alert alert-success" role="alert">
+          <%=success%>
+      </div>
+  <%}%>
+</div>

@@ -1,144 +1,144 @@
 <% include ../partials/header2 %>
 
 <div class="container-fluid">
-        <!-- Index of Posts -->
-        <div class="post-index-c">
-                <!-- Row for Posts -->
-                <div class="row post-r">
-                        <% posts.forEach(function(post){ %>
-                        <!-- Column space for each post -->
-                        <div class="card-c col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12">
-                                <!-- Each Post -->
-                                <div class="card index-card">
-                                        <!-- Post Image -->
-                                        <img src="<%= post.image %>">
-                                        <div class="card-body">
-                                                <!-- Title of Post -->
-                                                <div><%= post.title %></div>
-                                                <!-- Author of Post Link -->
-                                                <div>
-                                                        <span class="posted-by">
-                                                                posted by:
-                                                        </span>
-                                                        <a href="/profile/<%= post.seller.id %>"
-                                                            class="author-link">
-                                                                <%= post.seller.username %>
-                                                        </a>
-                                                </div><!-- Author of Post Link -->
-                                                <!-- Post link and price wrapper. -->
-                                                <div class="index2-card-footer">
-                                                        <!-- Link to Post -->
-                                                        <a href="/posts/<%= post._id %>"
-                                                        class="btn btn-white-g">
-                                                                More Info
-                                                        </a>
-                                                        <!-- Price  -->
-                                                        <span class="index-price">
-                                                                $69.97
-                                                        </span>
-                                                </div><!-- index2-card-footer -->
-                                        </div><!-- card-body -->
-                                </div><!-- card index-card -->
-                        </div><!-- Column space for each post -->
-                        <% }); %>
-                </div><!-- Row for posts -->
-        </div> <!-- Post Index Wrapper-->
+    <!-- Index of Posts -->
+    <div class="post-index-c">
+            <!-- Row for Posts -->
+            <div class="row post-r">
+                    <% posts.forEach(function(post){ %>
+                    <!-- Column space for each post -->
+                    <div class="card-c col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12">
+                            <!-- Each Post -->
+                            <div class="card index-card">
+                                    <!-- Post Image -->
+                                    <img src="<%= post.image %>">
+                                    <div class="card-body">
+                                            <!-- Title of Post -->
+                                            <div><%= post.title %></div>
+                                            <!-- Author of Post Link -->
+                                            <div>
+                                                    <span class="posted-by">
+                                                            posted by:
+                                                    </span>
+                                                    <a href="/profile/<%= post.seller.id %>"
+                                                        class="author-link">
+                                                            <%= post.seller.username %>
+                                                    </a>
+                                            </div><!-- Author of Post Link -->
+                                            <!-- Post link and price wrapper. -->
+                                            <div class="index2-card-footer">
+                                                    <!-- Link to Post -->
+                                                    <a href="/posts/<%= post._id %>"
+                                                    class="btn btn-white-g">
+                                                            More Info
+                                                    </a>
+                                                    <!-- Price  -->
+                                                    <span class="index-price">
+                                                            $69.97
+                                                    </span>
+                                            </div><!-- index2-card-footer -->
+                                    </div><!-- card-body -->
+                            </div><!-- card index-card -->
+                    </div><!-- Column space for each post -->
+                    <% }); %>
+            </div><!-- Row for posts -->
+    </div> <!-- post-index-c -->
 
-        <!-- Dynamic sidebar with a fixed left position -->
-        <div class="sidebar show-sidebar">
-                <div class="logo">
-                        <h2 class="brand-title">TheGolfClub</h2>
-                        <h4>Filter Options</h4>
-                </div>
-                <!-- Sidebar buttons if no user is logged in. -->
-                <% if (!currentUser) { %><!-- If no user is logged in. -->
-                <!-- Button wrapper if no user is logged in. -->
-                <div class="sidebar-btn-group">
-                        <!-- Hide Sidebar Button -->
-                        <a id="hideSidebar"
-                            class="btn btn-block btn-outline-secondary">
-                                <span class="sidebar-btn-text">
-                                        <i class="fas fa-angle-left"></i>
-                                        Hide
-                                </span>
-                                <span class="sidebar-btn-icon">
-                                        <i class="fas fa-angle-right"></i>
-                                </span>
-                        </a> <!-- Hide Sidebar Btn -->
-                        <!-- Login Button -->
-                        <a class="btn btn-block btn-outline-success"
-                            id="sidebarBtn2"
-                            href="/login">
-                                <!-- Text Wrapper-->
-                                <span class="sidebar-btn-text">
-                                        Login
-                                </span>
-                                <!-- Icon Wrapper -->
-                                <span class="sidebar-btn-icon">
-                                        <i class="fas fa-user"></i>
-                                </span>
-                        </a><!-- Login Btn -->
-                        <!-- Sign Up Button -->
-                        <a class="btn btn-block btn-outline-success"
-                           id="sidebarBtn3"
-                           href="/register">
-                               <span class="sidebar-btn-text">
-                                    Signup
-                               </span>
-                               <!-- Icon Wrapper -->
-                               <span class="sidebar-btn-icon">
-                                    <i class="fas fa-user-plus"></i>
-                               </span>
-                       </a><!-- Sign Up Btn -->
-                </div><!-- Button wrapper if no user is logged in. -->
-            <% } else { %><!-- If a user is logged in -->
-                <div class="sidebar-btn-group">
-                        <!-- Hide Sidebar Button -->
-                        <a id="hideSidebar"
-                           class="btn btn-block btn-outline-secondary">
-                               <span class="sidebar-btn-text">
+    <!-- Dynamic sidebar with a fixed left position -->
+    <div class="sidebar show-sidebar">
+            <div class="logo">
+                    <h2 class="brand-title">TheGolfClub</h2>
+                    <h4>Filter Options</h4>
+            </div>
+            <!-- Sidebar buttons if no user is logged in. -->
+            <% if (!currentUser) { %><!-- If no user is logged in. -->
+            <!-- Button wrapper if no user is logged in. -->
+            <div class="sidebar-btn-group">
+                    <!-- Hide Sidebar Button -->
+                    <a id="hideSidebar"
+                        class="btn btn-block btn-outline-secondary">
+                            <span class="sidebar-btn-text">
+                                    <i class="fas fa-angle-left"></i>
                                     Hide
-                               </span>
-                               <span class="sidebar-btn-icon">
-                                       <i class="fas fa-angle-right"></i>
-                               </span>
-                        </a><!-- Hide Sidebar Button -->
-                        <!-- Create Post Button -->
-                        <a class="btn btn-block btn-outline-secondary"
-                           id="sidebarBtn2"
-                           href="/posts/new">
-                               <span class="sidebar-btn-text">
-                                    Create Post
-                               </span>
-                               <span class="sidebar-btn-icon">
-                                       <i class="fas fa-plus"></i>
-                               </span>
-                        </a><!-- Create Post Button -->
-                        <!-- My Profile Button -->
-                        <a class="btn btn-block btn-outline-success"
-                           id="sidebarBtn3"
-                           href="/profile/<%= currentUser._id %>">
-                               <span class="sidebar-btn-text">
-                                    My Profile
-                               </span>
-                               <span class="sidebar-btn-icon">
-                                       <i class="fas fa-user"></i>
-                               </span>
-                        </a><!-- My Profile Button -->
-                        <!-- Logout Button -->
-                        <a class="btn btn-block btn-outline-success"
-                           id="sidebarBtn4"
-                           href="/logout/<%= currentUser.id %>">
-                               <span class="sidebar-btn-text">
-                                    Logout
-                               </span>
-                               <span class="sidebar-btn-icon">
-                                       <i class="fas fa-lock"></i>
-                               </span>
-                        </a><!-- Logout Button -->
-                </div><!-- Button wrapper if a user is logged in. -->
-        <% } %>
-        </div><!-- Sidebar -->
+                            </span>
+                            <span class="sidebar-btn-icon">
+                                    <i class="fas fa-angle-right"></i>
+                            </span>
+                    </a> <!-- Hide Sidebar Btn -->
+                    <!-- Login Button -->
+                    <a class="btn btn-block btn-outline-success"
+                        id="sidebarBtn2"
+                        href="/login">
+                            <!-- Text Wrapper-->
+                            <span class="sidebar-btn-text">
+                                    Login
+                            </span>
+                            <!-- Icon Wrapper -->
+                            <span class="sidebar-btn-icon">
+                                    <i class="fas fa-user"></i>
+                            </span>
+                    </a><!-- Login Btn -->
+                    <!-- Sign Up Button -->
+                    <a class="btn btn-block btn-outline-success"
+                       id="sidebarBtn3"
+                       href="/register">
+                           <span class="sidebar-btn-text">
+                                Signup
+                           </span>
+                           <!-- Icon Wrapper -->
+                           <span class="sidebar-btn-icon">
+                                <i class="fas fa-user-plus"></i>
+                           </span>
+                   </a><!-- Sign Up Btn -->
+            </div><!-- Button wrapper if no user is logged in. -->
+        <% } else { %><!-- If a user is logged in -->
+            <div class="sidebar-btn-group">
+                    <!-- Hide Sidebar Button -->
+                    <a id="hideSidebar"
+                       class="btn btn-block btn-outline-secondary">
+                           <span class="sidebar-btn-text">
+                                Hide
+                           </span>
+                           <span class="sidebar-btn-icon">
+                                   <i class="fas fa-angle-right"></i>
+                           </span>
+                    </a><!-- Hide Sidebar Button -->
+                    <!-- Create Post Button -->
+                    <a class="btn btn-block btn-outline-secondary"
+                       id="sidebarBtn2"
+                       href="/posts/new">
+                           <span class="sidebar-btn-text">
+                                Create Post
+                           </span>
+                           <span class="sidebar-btn-icon">
+                                   <i class="fas fa-plus"></i>
+                           </span>
+                    </a><!-- Create Post Button -->
+                    <!-- My Profile Button -->
+                    <a class="btn btn-block btn-outline-success"
+                       id="sidebarBtn3"
+                       href="/profile/<%= currentUser._id %>">
+                           <span class="sidebar-btn-text">
+                                My Profile
+                           </span>
+                           <span class="sidebar-btn-icon">
+                                   <i class="fas fa-user"></i>
+                           </span>
+                    </a><!-- My Profile Button -->
+                    <!-- Logout Button -->
+                    <a class="btn btn-block btn-outline-success"
+                       id="sidebarBtn4"
+                       href="/logout/<%= currentUser.id %>">
+                           <span class="sidebar-btn-text">
+                                Logout
+                           </span>
+                           <span class="sidebar-btn-icon">
+                                   <i class="fas fa-lock"></i>
+                           </span>
+                    </a><!-- Logout Button -->
+            </div><!-- Button wrapper if a user is logged in. -->
+    <% } %>
+    </div><!-- Sidebar -->
 
 </div><!-- Container for Entire Page -->
 

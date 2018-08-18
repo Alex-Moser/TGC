@@ -50,7 +50,7 @@
 /*greyscale*/
 /*Font Variables*/
 /* Posts ----------------------------*/
-/* Col space for posts */
+/* Row wrapper */
 .post-index-c {
   padding-top: 1em;
   background: #faf9fa;
@@ -68,42 +68,6 @@
 .index-card img {
   height: 250px;
   width: 250px;
-}
-
-/*-------------Details of post------------*/
-.card-body {
-  padding: 0;
-  color: #666666;
-}
-
-/* Price of posted item(s) */
-.index-price-price {
-  font-size: 0.8em;
-}
-
-.index-price {
-  font-size: 1.2em;
-  padding-left: 1em;
-}
-
-/* Author of post */
-.author-link {
-  /* username link */
-  vertical-align: top;
-  color: #a6a6a6;
-  font-size: 0.8em;
-}
-
-.author-link:hover {
-  vertical-align: top;
-  color: #cccccc;
-}
-
-.posted-by {
-  /* 'posted by:' */
-  vertical-align: top;
-  font-size: 0.7em;
-  color: #b3b3b3;
 }
 
 /***************************************
@@ -125,6 +89,12 @@ span.sidebar-btn-icon > i.fa-angle-right {
    menu will be available on the left */
 /* Display filter column on >768px screen*/
 @media (min-width: 768px) {
+  /* Dont display navbar on larger
+     screens' index page */
+  nav.my-navbar.index-nav {
+    display: none;
+  }
+
   /* Card for each post */
   .index-card {
     margin-bottom: 2em;
@@ -172,6 +142,42 @@ span.sidebar-btn-icon > i.fa-angle-right {
 #sidebarBtn3, #sidebarBtn4 {
   border-radius: 0;
   margin: 0;
+}
+
+/*-------------Details of post------------*/
+.card-body {
+  padding: 0;
+  color: #666666;
+}
+
+/* Price of posted item(s) */
+.index-price-price {
+  font-size: 0.8em;
+}
+
+.index-price {
+  font-size: 1.2em;
+  padding-left: 1em;
+}
+
+/* Author of post */
+.author-link {
+  /* username link */
+  vertical-align: top;
+  color: #a6a6a6;
+  font-size: 0.8em;
+}
+
+.author-link:hover {
+  vertical-align: top;
+  color: #cccccc;
+}
+
+.posted-by {
+  /* 'posted by:' */
+  vertical-align: top;
+  font-size: 0.7em;
+  color: #b3b3b3;
 }
 
 /*Color variables*/
