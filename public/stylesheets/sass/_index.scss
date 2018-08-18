@@ -1,11 +1,18 @@
 @import "variables";
 /* Posts ----------------------------*/
+
 /* Row wrapper */
 .post-index-c {
     padding-top: 1em;
     background: $violet-bg;
-    margin-left: auto;
+
 }
+
+div.card-c {
+    justify-content: center;
+    display: flex;
+}
+
 
 /* Card for each post */
 .index-card {
@@ -67,7 +74,7 @@ span.sidebar-btn-icon > i.fa-angle-right {
     /* Move over posts column space
        to make room for filter column */
     .post-index-c {
-        padding-left: 14em;
+        margin-left: 14em;
 
     }
 

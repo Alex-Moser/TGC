@@ -30,7 +30,7 @@ $( "#hideSidebar" ).click(function() {
      });
       // Move rest of page to the left
       $(".post-index-c").animate({
-          paddingLeft: "4em"
+          paddingLeft: "3em"
       }, 500, "swing", function() {
           // Animation complete
       });
