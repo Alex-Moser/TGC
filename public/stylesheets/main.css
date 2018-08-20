@@ -50,15 +50,18 @@
 /*greyscale*/
 /*Font Variables*/
 /* Posts ----------------------------*/
+div.card-c {
+  justify-content: center;
+  display: flex;
+  flex-shrink: 0;
+}
+
 /* Row wrapper */
 .post-index-c {
   padding-top: 1em;
   background: #faf9fa;
-}
-
-div.card-c {
-  justify-content: center;
-  display: flex;
+  padding: auto;
+  width: 100%;
 }
 
 /* Card for each post */
@@ -77,11 +80,6 @@ div.card-c {
 /***************************************
 /**** SIDEBAR **************************
 ***************************************/
-/* Don't display sidebar on <768px screen*/
-.sidebar {
-  display: none;
-}
-
 /* Hides right arrow icon until sidebar is hidden */
 span.sidebar-btn-icon > i.fa-angle-right {
   opacity: 0;
@@ -115,7 +113,7 @@ span.sidebar-btn-icon > i.fa-angle-right {
   /* Move over posts column space
      to make room for filter column */
   .post-index-c {
-    margin-left: 14em;
+    padding-left: 14em;
   }
 
   /* Sidebar when it is not hidden */

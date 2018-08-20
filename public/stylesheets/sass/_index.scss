@@ -1,41 +1,48 @@
 @import "variables";
 /* Posts ----------------------------*/
 
-/* Row wrapper */
-.post-index-c {
-    padding-top: 1em;
-    background: $violet-bg;
 
-}
 
 div.card-c {
     justify-content: center;
     display: flex;
+    flex-shrink: 0;
 }
 
 
-/* Card for each post */
-.index-card {
-    margin-bottom: 2em;
-    width: 251px;
-    height: 350px;
 
-}
-/* Main img for each post */
-.index-card img {
 
-    height: 250px;
-    width: 250px;
 
-}
+    /* Row wrapper */
+    .post-index-c {
+        padding-top: 1em;
+        background: $violet-bg;
+        padding: auto;
+        width: 100%;
+    }
+
+    /* Card for each post */
+    .index-card {
+        margin-bottom: 2em;
+        width: 251px;
+        height: 350px;
+
+    }
+
+    /* Main img for each post */
+    .index-card img {
+
+        height: 250px;
+        width: 250px;
+
+    }
+
 
 /***************************************
 /**** SIDEBAR **************************
 ***************************************/
-/* Don't display sidebar on <768px screen*/
-.sidebar {
-    display: none;
-}
+
+
 
 /* Hides right arrow icon until sidebar is hidden */
 span.sidebar-btn-icon > i.fa-angle-right {
@@ -74,7 +81,7 @@ span.sidebar-btn-icon > i.fa-angle-right {
     /* Move over posts column space
        to make room for filter column */
     .post-index-c {
-        margin-left: 14em;
+        padding-left: 14em;
 
     }
 
