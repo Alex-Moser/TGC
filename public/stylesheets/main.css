@@ -49,25 +49,24 @@
 /*green*/
 /*greyscale*/
 /*Font Variables*/
-/* Posts ----------------------------*/
+/* Centers the post cards when there is extra space */
 div.card-c {
   justify-content: center;
   display: flex;
   flex-shrink: 0;
 }
 
-/* Row wrapper */
+/* post container */
 .post-index-c {
   padding-top: 1em;
   background: #faf9fa;
-  width: 100%;
 }
 
 /* Card for each post */
 .index-card {
   margin-bottom: 2em;
   width: 251px;
-  height: 350px;
+  height: 360px;
 }
 
 /* Main img for each post */
@@ -76,78 +75,33 @@ div.card-c {
   width: 250px;
 }
 
-/***************************************
-/**** SIDEBAR **************************
-***************************************/
-/* Hides right arrow icon until sidebar is hidden */
-span.sidebar-btn-icon > i.fa-angle-right {
-  opacity: 0;
-}
-
-/*** MEDIUM AND LARGER SCREEN CSS ****
-
-   On these size screens a sidebar
-   menu will be available on the left */
-/* Display filter column on >768px screen*/
+/* Note at this breakpoint, the sidebar
+    appears and the navbar dissappears. */
 @media (min-width: 768px) {
-  /* Dont display navbar on larger
-     screens' index page */
-  nav.my-navbar.index-nav {
-    display: none;
-  }
-
   /* Card for each post */
   .index-card {
     margin-bottom: 2em;
     width: 222px;
-    height: 320px;
+    height: 330px;
   }
 
-  /* Main img for each post */
+  /*  Main img for each post,
+      note it is smaller here
+      but same aspect ratio.  */
   .index-card img {
     height: 220px;
     width: 220px;
   }
 
   /* Move over posts column space
-     to make room for filter column */
+     to make room for sidebar */
   .post-index-c {
     padding-left: 14em;
   }
-
-  /* Sidebar when it is not hidden */
-  .sidebar {
-    animation: slide_show;
-    animation-fill-mode: forwards;
-    box-shadow: 2px 0 3px #cccccc;
-    display: flex;
-    flex-direction: column;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 14em;
-    height: 100%;
-    background: #fff;
-  }
-
-  /* TheGolfClub/TGC */
-  .logo {
-    order: 0;
-    color: #1AA61A;
-    padding: 0.5em 0 0.5em 1em;
-  }
 }
-/* end >768px screen condition */
-/* Rm vrt mrgns of menu btns*/
-#hideSidebar, #sidebarBtn2,
-#sidebarBtn3, #sidebarBtn4 {
-  border-radius: 0;
-  margin: 0;
-}
-
 /*-------------Details of post------------*/
 .card-body {
-  padding: 0;
+  padding: 0.5em;
   color: #666666;
 }
 
@@ -157,8 +111,8 @@ span.sidebar-btn-icon > i.fa-angle-right {
 }
 
 .index-price {
-  font-size: 1.2em;
-  padding-left: 1em;
+  font-family: "Roboto", sans-serif;
+  font-size: 1.5em;
 }
 
 /* Author of post */
@@ -200,7 +154,7 @@ span.sidebar-btn-icon > i.fa-angle-right {
   border: #1AA61A 2px solid;
 }
 .btn-green:active {
-  box-shadow: 0px 0px 9px #d7f9d7;
+  box-shadow: 0px 0px 9px #d9f9d9;
   background: #fff;
   color: #1AA61A;
   border: #1AA61A 2px solid;
@@ -375,35 +329,177 @@ span.sidebar-btn-icon > i.fa-angle-right {
 /*green*/
 /*greyscale*/
 /*Font Variables*/
-/***** Naming Conventions *****
+@media (min-width: 768px) {
+  /* Sidebar when it is not hidden */
+  .sidebar {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 2px 0 3px #cccccc;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 14em;
+    height: 100%;
+    background: #fff;
+  }
 
-    [class name]-r => row
+  /* Sidebar Buttons */
+  div.sidebar-btn-group {
+    padding-bottom: 1em;
+  }
 
-    [class name]-c => column
+  /* Hides right arrow icon, it's
+      toggled in sidebar.js from there. */
+  span.sidebar-btn-icon > i.fa-angle-right {
+    opacity: 0;
+  }
 
-******************************/
-body {
-  font-family: "Merriweather Sans", sans-serif;
-  color: #7a7a7a;
+  #hideSidebar {
+    /* Hide */
+    border: 1px #1AA61A outset;
+    color: #1fc81f;
+    border-radius: 1px;
+    background: #fff;
+    font-weight: bold;
+    width: 100%;
+  }
+
+  #sidebarBtn2 {
+    /* Create Post */
+    border: 1px #1fc81f outset;
+    border-radius: 1px;
+    background: #1fc81f;
+    color: #fff;
+    font-weight: bold;
+    width: 100%;
+  }
+
+  /* Makes custom price range inputs
+     on same line as radio button */
+  #customPrice {
+    display: inline;
+  }
+
+  /* Insures inputs dont overflow one line. */
+  label > input.customPriceInput {
+    max-width: 35%;
+  }
+
+  /* FILTER SECTION ********************************/
+  /* Filter wrapper */
+  section.filter-wrapper {
+    padding-top: 4em;
+  }
+
+  /* Spaces out filter sections */
+  div.filter-section {
+    padding-bottom: 2em;
+  }
+
+  /* Title of the set of filters */
+  #filterLegend {
+    font-size: 1.5em;
+    background: #fff;
+    border: #ebebeb 1px solid;
+    border-radius: 3px;
+    text-align: center;
+    margin-bottom: 1em;
+  }
+
+  #filterFieldset {
+    border: solid 1px #ebebeb;
+  }
+
+  /* Makes the price range numbers a better font for numbers */
+  input[name=priceRadios] ~ label {
+    font-family: "Roboto", sans-serif;
+  }
+
+  /* Insures dropdown input is on new line */
+  label.select-label {
+    display: block;
+  }
+
+  /* Title of each filter */
+  label.filter-label, p.filter-label {
+    margin-bottom: 3px;
+    font-size: 1.2em;
+    padding-left: 1em;
+  }
+
+  /* Indents checkbox/radio btns and decrease their font size */
+  div.check-radio-wrapper, div.filter-section > select {
+    margin-left: 2em;
+    font-size: 0.9em;
+  }
 }
-
-/* NAVBAR */
+/*Color variables*/
+/*main*/
+/*Violet*/
+/*Red*/
+/*green*/
+/*greyscale*/
+/*Font Variables*/
+/*Color variables*/
+/*main*/
+/*Violet*/
+/*Red*/
+/*green*/
+/*greyscale*/
+/*Font Variables*/
 nav.my-navbar {
   border-bottom: 1px solid #cccccc;
 }
 
-/* Navbar text */
-#backArrow,
+/* TheGolfClub/TGC */
 #brand {
   font-weight: bold;
+  color: #1fc81f;
+}
+
+/* the word Club in the logo */
+#logoClub {
   color: #1AA61A;
+}
+
+/* the word The in the logo */
+#logoThe {
+  color: #41e141;
+}
+
+#backArrow {
+  color: #1fc81f;
+}
+
+#logout {
+  color: #cccccc;
 }
 
 #login,
 #register,
 #createPost,
 #myProfile {
-  color: #1AA61A;
+  color: #41e141;
+}
+
+/* Hides square around back button icon */
+.back-arrow-btn {
+  background: transparent;
+}
+
+/***** Naming Conventions *****
+
+    class-name-r => row
+    class-name-c => column
+
+    Macro : Refers to the positioning of the elements.
+    Micro : Refers to the appearance of an element.
+
+******************************/
+body {
+  font-family: "Merriweather Sans", sans-serif;
+  color: #7a7a7a;
 }
 
 input.box-shadow-green:focus {
@@ -429,10 +525,6 @@ input.box-shadow-green:focus {
   margin-right: 5em;
   font-size: 2em;
   color: #666666;
-}
-
-.back-arrow-btn {
-  background: transparent;
 }
 
 /*----------------Show Post Custom Classes ------------*/

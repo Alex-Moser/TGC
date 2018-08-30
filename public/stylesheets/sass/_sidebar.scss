@@ -1,0 +1,120 @@
+@import "variables";
+
+// Sidebar is only visible at >=768px
+@media (min-width: 768px) {
+    /* Sidebar when it is not hidden */
+    .sidebar {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        box-shadow: 2px 0 3px $grey-l2;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 14em;
+        height: 100%;
+        background: #fff;
+    }
+
+
+
+
+    /* Sidebar Buttons */
+
+    div.sidebar-btn-group {
+
+      padding-bottom: 1em;
+
+    }
+
+    /* Hides right arrow icon, it's
+        toggled in sidebar.js from there. */
+    span.sidebar-btn-icon > i.fa-angle-right {
+        opacity: 0;
+    }
+
+
+
+    #hideSidebar { /* Hide */
+        border: 1px $green outset;
+        color: $green-l;
+        border-radius: 1px;
+        background: #fff;
+        font-weight: bold;
+        width: 100%;
+    }
+
+    #sidebarBtn2 { /* Create Post */
+      border: 1px $green-l outset;
+      border-radius: 1px;
+      background: $green-l;
+      color: #fff;
+      font-weight: bold;
+      width: 100%;
+    }
+
+
+
+    /* Makes custom price range inputs
+       on same line as radio button */
+    #customPrice {
+        display:inline;
+    }
+
+    /* Insures inputs dont overflow one line. */
+    label > input.customPriceInput {
+        max-width: 35%;
+    }
+
+
+    /* FILTER SECTION ********************************/
+
+    /* Filter wrapper */
+    section.filter-wrapper {
+      padding-top: 4em;
+    }
+
+    /* Spaces out filter sections */
+    div.filter-section {
+      padding-bottom: 2em;
+    }
+
+    /* Title of the set of filters */
+    #filterLegend {
+      font-size: 1.5em;
+      background: #fff;
+      border: $grey-l 1px solid;
+      border-radius: 3px;
+      text-align: center;
+      margin-bottom: 1em;
+    }
+
+    #filterFieldset {
+      border: solid 1px $grey-l;
+
+    }
+
+    /* Makes the price range numbers a better font for numbers */
+    input[name="priceRadios"] ~ label {
+      font-family: 'Roboto', sans-serif;
+    }
+
+    /* Insures dropdown input is on new line */
+    label.select-label {
+      display: block;
+    }
+
+    /* Title of each filter */
+    label.filter-label, p.filter-label {
+      margin-bottom: 3px;
+      font-size: 1.2em;
+      padding-left: 1em;
+    }
+
+    /* Indents checkbox/radio btns and decrease their font size */
+    div.check-radio-wrapper, div.filter-section > select {
+      margin-left: 2em;
+      font-size: 0.9em;
+    }
+
+}

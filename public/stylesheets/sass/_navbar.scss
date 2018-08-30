@@ -1,0 +1,42 @@
+@import "variables";
+
+
+nav.my-navbar {
+    border-bottom: 1px solid $grey-l2;
+}
+
+/* TheGolfClub/TGC */
+#brand {
+    font-weight: bold;
+    color: $green-l;
+    // font-size: 1.6em;
+}
+/* the word Club in the logo */
+#logoClub {
+    color: $green;
+}
+/* the word The in the logo */
+#logoThe {
+    color: $green-l2;
+}
+
+
+#backArrow {
+    color: $green-l;
+}
+
+#logout {
+  color: $grey-l2;
+}
+
+#login,
+#register,
+#createPost,
+#myProfile {
+    color: $green-l2;
+}
+
+/* Hides square around back button icon */
+.back-arrow-btn {
+    background: transparent;
+}

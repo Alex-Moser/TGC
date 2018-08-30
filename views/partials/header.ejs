@@ -12,7 +12,7 @@
           crossorigin="anonymous">
     <!-- Bootstrap -->
     <link rel="stylesheet" href="/bootstrap-4.1.1-dist/css/bootstrap.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans|Alegreya+Sans+SC|Merriweather|Merriweather+Sans|Quattrocento:400,700|Alegreya" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans|Alegreya+Sans+SC|Roboto|Merriweather|Merriweather+Sans|Quattrocento:400,700|Alegreya" rel="stylesheet">
     <!-- main.css -->
     <link rel="stylesheet" href="/stylesheets/main.css">
   </head>
@@ -25,7 +25,11 @@
               <i id="backArrow" class="fas fa-arrow-left"></i>
           </button>
           <!-- Brand -->
-            <a id="brand" class="navbar-brand" href="/">TheGolfClub</a>
+
+          <a id="brand" class="logo navbar-brand" href="/">
+            <!-- these spans allow each word to be independently styled -->
+            <span id="logoThe">The</span>Golf<span id="logoClub">Club</span>
+          </a>
           <!-- Toggler (Hamburger icon) -->
           <button id="toggler"
                   class="navbar-toggler"
@@ -36,8 +40,8 @@
           </button>
           <!-- Display either login and sign-up or my profile and logout -->
           <div class="collapse navbar-collapse justify-content-end"
-               id="navbarToggler">
-              <ul class="navbar-nav" >
+              id="navbarToggler">
+              <ul class="navbar-nav">
                <%  if(!currentUser){%>
                         <li class="nav-item">
                             <a id="login" class="nav-link" href="/login">Login</a>

@@ -1,13 +1,17 @@
 @import "landing";
 @import "index";
 @import "btns";
+@import "sidebar";
 @import "variables";
+@import "navbar";
 
 /***** Naming Conventions *****
 
-    [class name]-r => row
+    class-name-r => row
+    class-name-c => column
 
-    [class name]-c => column
+    Macro : Refers to the positioning of the elements.
+    Micro : Refers to the appearance of an element.
 
 ******************************/
 
@@ -15,30 +19,10 @@
 body {
     font-family: $merri-sans;
     color: $grey;
-
 }
 
 
-/* NAVBAR */
 
-nav.my-navbar {
-    border-bottom: 1px solid $grey-l2;
-}
-
-
-/* Navbar text */
-#backArrow,
-#brand {
-    font-weight: bold;
-    color: $green;
-}
-
-#login,
-#register,
-#createPost,
-#myProfile {
-    color: $green;
-}
 
 // When someone focuses this input the shadow/border is green
 input.box-shadow-green:focus {
@@ -65,12 +49,6 @@ input.box-shadow-green:focus {
     font-size: 2em;
     color: #666666;
 }
-
-.back-arrow-btn {
-    background: transparent;
-}
-
-
 
 /*----------------Show Post Custom Classes ------------*/
 

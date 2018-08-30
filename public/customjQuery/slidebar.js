@@ -1,13 +1,19 @@
 $(document).ready(function() {
+
     // When the HIDE button is clicked...
     $( "#hideSidebar" ).click(function() {
+
         // IF Sidebar is NOT HIDDEN
         if ($( "div.sidebar" ).hasClass( "show-sidebar" )) {
+
         // HIDE SIDEBAR
             // Shrink sidebar to left
-            $( "div.sidebar" ).animate({ width: "3em" }, 500, "swing" );
+            $( "div.sidebar" ).animate({ width: "3em" }, 400, "swing" );
             // slide logo and filter options
-            $( "div.logo" ).animate({ marginLeft: "-15em" }, 500, "swing" );
+            $( "h2.logo, div.sidebar-text, h4.sidebar-text, section.filter-wrapper" ).
+            animate({ marginLeft: "-20em" }, 400, "swing" );
+            // Remove border of filter form
+            $( "#filterFieldset, #filterLegend" ).css({ border: "none" });
             // Fade text on sidebar buttons
             $( "span.sidebar-btn-text" ).
             animate({ opacity: "toggle" }, 200, "swing", function() {
@@ -16,16 +22,20 @@ $(document).ready(function() {
                 animate({ opacity: "1"}, 200, "swing" );
             });
             // Move rest of page to the left
-            $( ".post-index-c" ).animate({ paddingLeft: "3em" }, 500, "swing" );
+            $( ".post-index-c" ).animate({ paddingLeft: "3em" }, 400, "swing" );
 
-        // IF Sidebar IS HIDDEN
-        } else {
+
+        } else { // IF Sidebar IS HIDDEN
+
         // SHOW SIDEBAR
             /* Slide in sidebar from left */
-            $( "div.sidebar" ).animate( { width: "14em" }, 500, "swing");
+            $( "div.sidebar" ).animate( { width: "14em" }, 400, "swing");
             // Fade Logo and "Filter options"
-            $( "div.logo" ).animate({ marginLeft: "0" }, 500, "swing" );
-            // Now toggle on opacity of right arrow icon
+            $( "h2.logo, div.sidebar-text, h4.sidebar-text, section.filter-wrapper" ).
+            animate({ marginLeft: "0" }, 400, "swing" );
+            // Add border back to filter fieldset and legend
+            $("#filterFieldset, #filterLegend").css({ border: "solid 1px #ebebeb" });
+            // Toggle on opacity of right arrow icon
             $( "span.sidebar-btn-icon > i.fa-angle-right" ).
             animate({ opacity: "0" }, 200, "swing", function() {
                 // Fade text on sidebar buttons
@@ -33,7 +43,7 @@ $(document).ready(function() {
                 animate({ opacity: "toggle" }, 200, "swing" );
             });
             // Move rest of page to the right to make room for sidebar.
-            $( ".post-index-c" ).animate({ paddingLeft: "14em" }, 500, "swing" );
+            $( ".post-index-c" ).animate({ paddingLeft: "14em" }, 400, "swing" );
         }
 
         // Add or Remove the show-sidebar class.
