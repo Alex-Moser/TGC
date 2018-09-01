@@ -57,117 +57,235 @@
     <!-- FILTER SECTION -->
     <section class="show-filter filter-wrapper">
       <!-- FILTER FORM -->
-      <form id="filterForm" =action="#">
+      <form id="filterForm" action="#">
         <!-- FILTER FORM FIELDSET -->
         <fieldset id="filterFieldset">
           <!-- FIELDSET TITLE -->
           <legend id="filterLegend">Filter Options</legend>
-          <p style="font-size: .7em; padding: 0 1em;">note: filter not functional yet</p>
 
-          <!-- NUMBER OF CLUBS CHECKBOXES -->
-          <div class="filter-section">
-            <p class="filter-label">Number of Clubs</p>
-            <div class="check-radio-wrapper">
-              <!-- A single club checkbox -->
-              <input type="checkbox" name="numClubs" id="oneClub" value="">
-              <label for="oneClub">A single club</label>
-            </div>
-            <div class="check-radio-wrapper">
-              <!-- A set of clubs checkbox -->
-              <input type="checkbox" name="numClubs" id="setClubs" value="">
-              <label for="setClubs">A set</label>
-            </div>
-          </div>
 
-          <!-- PRICE RANGE RADIO BUTTONS -->
-          <div class="filter-section">
-            <!-- Title of price filter section. -->
-            <p class="filter-label" >Price Range</p>
-            <!-- $0 - $50 -->
-            <div class="check-radio-wrapper">
-              <input type="radio" name="priceRadios" id="priceRadio1"
-                value="option1">
-              <label for="priceRadio1">$0 - $50</label>
+          <!-- Filter options scrollable container -->
+          <div class="filter-options-wrapper">
+
+            <!-- NUMBER OF CLUBS CHECKBOXES -->
+            <div class="filter-section">
+              <p class="filter-label">Number of Clubs</p>
+              <div class="check-radio-wrapper">
+                <!-- A single club checkbox -->
+                <input type="checkbox" name="numClubs" id="oneClub" value="">
+                <label for="oneClub">A single club</label>
+              </div>
+              <div class="check-radio-wrapper">
+                <!-- A set of clubs checkbox -->
+                <input type="checkbox" name="numClubs" id="setClubs" value="">
+                <label for="setClubs">A set</label>
+              </div>
             </div>
-            <!-- $50 - $150 -->
-            <div class="check-radio-wrapper">
-              <input type="radio" name="priceRadios" id="priceRadio2"
-                value="option2">
-              <label for="priceRadio2">$50 - $150</label>
+
+            <!-- Types of Clubs
+              MAIN
+              -Driver, Fairway Wood (3-wood), 3-7 irons,
+              pitching wedge (10-iron), sand wedge, putter,
+              SECONDARY
+              fairway wood (5-wood) hybrid, gap wedge, lob wedge, chipper-->
+            <!-- CLUB TYPE CUSTOM DROP DOWN-->
+            <div class="dropdown-wrapper">
+              <p class="filter-label">Club Type</p>
+              <div class="custom-dropdown">
+                <p class="dropdown-title">Types</p>
+                <i class="fas fa-angle-down"></i>
+              </div>
+              <div class="select-option-wrapper">
+
+                <!-- Dropdown Category Label-->
+                <p class="standard-clubs">Standard Clubs</p>
+                <!-- SHOULD DRY UP -->
+                <!-- Dropdown checkbox options for each type of club -->
+
+                <div class="dropdown-check-wrapper">
+                  <input type="checkbox" id="driverCheck" value="">
+                  <label for="driverCheck">Driver</label>
+                </div>
+
+                <div class="dropdown-check-wrapper">
+                  <input type="checkbox" id="fairwayCheck" value="">
+                  <label for="fairwayCheck">Fairway</label>
+                </div>
+
+                <div class="dropdown-check-wrapper">
+                  <input type="checkbox" id="3ironCheck" value="">
+                  <label for="3ironCheck">3 Iron</label>
+                </div>
+
+                <div class="dropdown-check-wrapper">
+                  <input type="checkbox" id="4ironCheck" value="">
+                  <label for="4ironCheck">4 Iron</label>
+                </div>
+
+                <div class="dropdown-check-wrapper">
+                  <input type="checkbox" id="5ironCheck" value="">
+                  <label for="5ironCheck">5 Iron</label>
+                </div>
+
+                <div class="dropdown-check-wrapper">
+                  <input type="checkbox" id="6ironCheck" value="">
+                  <label for="6ironCheck">6 Iron</label>
+                </div>
+
+                <div class="dropdown-check-wrapper">
+                  <input type="checkbox" id="7ironCheck" value="">
+                  <label for="7ironCheck">7 Iron</label>
+                </div>
+
+                <div class="dropdown-check-wrapper">
+                  <input type="checkbox" id="pWedgeCheck" value="">
+                  <label for="pWedgeCheck">P. Wedge</label>
+                </div>
+
+                <div class="dropdown-check-wrapper">
+                  <input type="checkbox" id="sWedgeCheck" value="">
+                  <label for="sWedgeCheck">Sand Wedge</label>
+                </div>
+
+                <div class="dropdown-check-wrapper">
+                  <input type="checkbox" id="putterCheck" value="">
+                  <label for="PutterCheck">Putter</label>
+                </div>
+              </div>
             </div>
-            <!-- $150 - $300 -->
-            <div class="check-radio-wrapper">
-              <input type="radio" name="priceRadios" id="priceRadio3"
-                value="option3">
-              <label for="priceRadio3">$150 - $300</label>
+
+            <!-- BRAND CUSTOM DROPDOWN -->
+            <div class="dropdown-wrapper">
+              <p class="filter-label">Club Brand</p>
+              <div class="custom-dropdown">
+                <p class="dropdown-title">Brands</p>
+                <i class="fas fa-angle-down"></i>
+              </div>
+              <div class="select-option-wrapper">
+                <div class="dropdown-check-wrapper">
+                  <input type="checkbox" id="callawayCheck" value="">
+                  <label for="callawayCheck">Callaway</label>
+                </div>
+                <div class="dropdown-check-wrapper">
+                  <input type="checkbox" id="clevelandCheck" value="">
+                  <label for="clevelandCheck">Cleveland</label>
+                </div>
+                <div class="dropdown-check-wrapper">
+                  <input type="checkbox" id="cobraCheck" value="">
+                  <label for="cobraCheck">Cobra</label>
+                </div>
+                <div class="dropdown-check-wrapper">
+                  <input type="checkbox" id="mizunoCheck" value="">
+                  <label for="mizunoCheck">Mizuno</label>
+                </div>
+                <div class="dropdown-check-wrapper">
+                  <input type="checkbox" id="odysseyCheck" value="">
+                  <label for="odysseyCheck">Odyssey</label>
+                </div>
+                <div class="dropdown-check-wrapper">
+                  <input type="checkbox" id="pingCheck" value="">
+                  <label for="pingCheck">Ping</label>
+                </div>
+                <div class="dropdown-check-wrapper">
+                  <input type="checkbox" id="pxgCheck" value="">
+                  <label for="pxgCheck">PXG</label>
+                </div>
+                <div class="dropdown-check-wrapper">
+                  <input type="checkbox" id="taylorMadeCheck" value="">
+                  <label for="taylorMadeCheck">TaylorMade</label>
+                </div>
+                <div class="dropdown-check-wrapper">
+                  <input type="checkbox" id="titleistCheck" value="">
+                  <label for="titleistCheck">Titleist</label>
+                </div>
+                <div class="dropdown-check-wrapper">
+                  <input type="checkbox" id="wilsonCheck" value="">
+                  <label for="wilsonCheck">Wilson</label>
+                </div>
+              </div>
             </div>
-            <!-- $300+ -->
-            <div class="check-radio-wrapper">
-              <input type="radio" name="priceRadios" id="priceRadio4"
-                value="option4">
-              <label for="priceRadio4">$300+</label>
-            </div>
-            <!-- CUSTOM RANGE -->
-            <div class="check-radio-wrapper">
-              <!-- input is not nested in label => other input focusable -->
-              <input type="radio" name="priceRadios" id="priceRadio5"
-                value="option5">
-              <!-- label with inputs for custom price range. -->
-              <label id="customPrice" for="priceRadio5">
-                <!-- custom price interval starts here -->
-                <input class="customPriceInput" type="number" value=""
-                  name="priceRangeStartVal">
-                to
-                <!-- custom price interval ends here -->
-                <input class="customPriceInput" type="number" value=""
-                  name="priceRangeEndVal">
+
+            <!-- PRICE RANGE RADIO BUTTONS -->
+            <div class="filter-section">
+              <!-- Title of price filter section. -->
+              <p class="filter-label" >Price Range</p>
+              <!-- $0 - $50 -->
+              <div class="check-radio-wrapper">
+                <input type="radio" name="priceRadios" id="priceRadio1"
+                  value="option1">
+                <label for="priceRadio1">$0 - $50</label>
+              </div>
+              <!-- $50 - $150 -->
+              <div class="check-radio-wrapper">
+                <input type="radio" name="priceRadios" id="priceRadio2"
+                  value="option2">
+                <label for="priceRadio2">$50 - $150</label>
+              </div>
+              <!-- $150 - $300 -->
+              <div class="check-radio-wrapper">
+                <input type="radio" name="priceRadios" id="priceRadio3"
+                  value="option3">
+                <label for="priceRadio3">$150 - $300</label>
+              </div>
+              <!-- $300+ -->
+              <div class="check-radio-wrapper">
+                <input type="radio" name="priceRadios" id="priceRadio4"
+                  value="option4">
+                <label for="priceRadio4">$300+</label>
+              </div>
+              <!-- CUSTOM RANGE -->
+              <div class="check-radio-wrapper">
+                <!-- input is not nested in label => other input focusable -->
+                <input type="radio" name="priceRadios" id="priceRadio5"
+                  value="option5">
+                <!-- label with inputs for custom price range. -->
+                <label id="customPrice" for="priceRadio5">
+                  <!-- custom price interval starts here -->
+                  <input class="customPriceInput" type="number" value=""
+                    name="priceRangeStartVal">
+                  to
+                  <!-- custom price interval ends here -->
+                  <input class="customPriceInput" type="number" value=""
+                    name="priceRangeEndVal">
+                </label>
+              </div>
+            </div><!-- /price-range -->
+
+            <!-- SELLER RATING DROPDOWN-->
+            <div class="filter-section">
+              <label class="select-label filter-label" for="ratingSelect">
+                Seller Rating
               </label>
+              <select id="ratingSelect" >
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5 (best)</option>
+              </select>
             </div>
-          </div><!-- /price-range -->
 
-          <!-- CONDITION DROP DOWN-->
-          <div class="filter-section">
-            <label class="select-label filter-label" for="conditionSelect">
-              Condition
-            </label>
-            <select id="conditionSelect">
-              <option>New</option>
-              <option>Good</option>
-              <option>Fair</option>
-              <option>Worn</option>
-              <option>Heavily Worn</option>
-            </select>
-          </div>
+            <!-- CONDITION DROP DOWN-->
+            <div class="filter-section">
+              <label class="select-label filter-label" for="conditionSelect">
+                Condition
+              </label>
+              <select id="conditionSelect">
+                <option>New</option>
+                <option>Good</option>
+                <option>Fair</option>
+                <option>Worn</option>
+                <option>Heavily Worn</option>
+              </select>
+            </div>
 
-          <!-- SELLER RATING DROPDOWN-->
-          <div class="filter-section">
-            <label class="select-label filter-label" for="ratingSelect">
-              Seller Rating
-            </label>
-            <select id="ratingSelect" >
-              <option>1</option>
-              <option>2</option>
-              <option>3</option>
-              <option>4</option>
-              <option>5 (best)</option>
-            </select>
-          </div>
-
+          </div> <!-- /filter-options-wrapper -->
         </fieldset><!-- /filter fieldset -->
       </form><!-- /#filterForm -->
     </section><!-- /filter section -->
 
     <!-- BUTTON WRAPPER -->
-    <div class="sidebar-btn-group">
-
-      <!-- HIDE SIDEBAR BUTTON -->
-      <a id="hideSidebar" class="btn">
-        <!-- Text Wrapper-->
-        <span class="sidebar-btn-text">
-          <i class="fas fa-angle-left"></i> Hide</span>
-        <!-- Icon Wrapper -->
-        <span class="sidebar-btn-icon"><i class="fas fa-angle-right"></i></span>
-      </a>
+    <div class="sidebar-btn-wrapper">
 
       <!-- CREATE POST BUTTON -->
       <a class="btn" id="sidebarBtn2"
@@ -178,8 +296,16 @@
         <span class="sidebar-btn-icon"><i class="fas fa-plus"></i></span>
       </a>
 
-    </div><!-- /Button wrapper -->
+      <!-- HIDE SIDEBAR BUTTON -->
+      <a id="hideSidebar" class="btn">
+        <!-- Text Wrapper-->
+        <span class="sidebar-btn-text">
+          <i class="fas fa-angle-left"></i> Hide</span>
+        <!-- Icon Wrapper -->
+        <span class="sidebar-btn-icon"><i class="fas fa-angle-right"></i></span>
+      </a>
 
+    </div><!-- /Button wrapper -->
 
   </div><!-- /Sidebar -->
 

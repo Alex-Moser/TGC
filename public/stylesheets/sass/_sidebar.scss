@@ -13,45 +13,13 @@
         left: 0;
         width: 14em;
         height: 100%;
-        background: #fff;
+        background: $green-bg;
+        border-right: 1px $cyan solid;
     }
 
 
 
 
-    /* Sidebar Buttons */
-
-    div.sidebar-btn-group {
-
-      padding-bottom: 1em;
-
-    }
-
-    /* Hides right arrow icon, it's
-        toggled in sidebar.js from there. */
-    span.sidebar-btn-icon > i.fa-angle-right {
-        opacity: 0;
-    }
-
-
-
-    #hideSidebar { /* Hide */
-        border: 1px $green outset;
-        color: $green-l;
-        border-radius: 1px;
-        background: #fff;
-        font-weight: bold;
-        width: 100%;
-    }
-
-    #sidebarBtn2 { /* Create Post */
-      border: 1px $green-l outset;
-      border-radius: 1px;
-      background: $green-l;
-      color: #fff;
-      font-weight: bold;
-      width: 100%;
-    }
 
 
 
@@ -74,20 +42,28 @@
       padding-top: 4em;
     }
 
+    div.filter-options-wrapper {
+      overflow-y: scroll;
+      padding-top: 1em;
+    }
+
     /* Spaces out filter sections */
-    div.filter-section {
+    div.filter-section, .dropdown-wrapper {
+      color: $cyan;
       padding-bottom: 2em;
     }
 
     /* Title of the set of filters */
     #filterLegend {
-      font-size: 1.5em;
+      font-size: 1.7em;
       background: #fff;
-      border: $grey-l 1px solid;
       border-radius: 3px;
       text-align: center;
-      margin-bottom: 1em;
+      margin-bottom: .5em;
+      color: $cyan;
+      background: $green-mint;
     }
+
 
     #filterFieldset {
       border: solid 1px $grey-l;
@@ -96,7 +72,7 @@
 
     /* Makes the price range numbers a better font for numbers */
     input[name="priceRadios"] ~ label {
-      font-family: 'Roboto', sans-serif;
+
     }
 
     /* Insures dropdown input is on new line */
@@ -106,6 +82,7 @@
 
     /* Title of each filter */
     label.filter-label, p.filter-label {
+      color: $cyan;
       margin-bottom: 3px;
       font-size: 1.2em;
       padding-left: 1em;
@@ -117,4 +94,119 @@
       font-size: 0.9em;
     }
 
+
+    /*********************************************************
+    *************CUSTOM DROPDOWNS ***************************
+    *********************************************************/
+
+    /*Dropdown wrapper */
+    div.dropdown-wrapper {
+      padding-bottom: 1em;
+      width: 100%;
+    }
+
+    /*Clickable top portion */
+    div.custom-dropdown {
+      z-index: 0;
+      border: 1px $green-l3 solid;
+      box-shadow: 0 0 1px $grey-d;
+      border-radius: 5px;
+      height: 33px;
+      width: 9em;
+      margin-left: 2em; /*centers dropdown */
+      padding-top: 3px; /* vertically centers text and icon */
+      position: relative; /* necessary since pos: absolute used on menu */
+      background: linear-gradient($cyan-l, $cyan);
+    }
+
+    /* Title on dropdown itself */
+    p.dropdown-title {
+      color: $green-l3;
+      display: inline;
+      margin-left: .5em;
+
+    }
+
+    i.fa-angle-down {
+      margin-top: 2px;
+      margin-left: 3.5em;
+      background: transparent;
+      color: $green-l3;
+    }
+
+    /*Menu*/
+    div.select-option-wrapper {
+      z-index: 1;
+      height: 150px;
+      width: 9em;
+      margin-left: 2em;
+      position: absolute;
+      background: linear-gradient(#fff, $green-bg);
+      overflow-y: scroll;
+      display: none;
+      border: 1px $cyan-l2 solid;
+    }
+
+    div.select-option-wrapper.menu-visible {
+      display: block;
+    }
+
+
+    div.dropdown-check-wrapper {
+      margin-left: 1em;
+      font-size: .9em;
+      color: $cyan-l;
+    }
+
+    p.standard-clubs {
+      color: $cyan;
+      margin-bottom: 0;
+      padding-left: 3px;
+      padding-top: 3px;
+    }
+
+
+
+    /********************************************************
+    ***************SIDEBAR BUTTONS***************************
+    **********************************************************/
+
+    div.sidebar-btn-wrapper {
+      padding-bottom: 1em;
+    }
+
+    /* Hides right arrow icon, it's
+        toggled in sidebar.js from there. */
+    span.sidebar-btn-icon > i.fa-angle-right {
+        opacity: 0;
+    }
+
+    #hideSidebar { /* Hide */
+        border: 2px $cyan solid;
+        color: $green-l3;
+        border-radius: 1px;
+        background: $cyan;
+        font-weight: bold;
+        width: 100%;
+    }
+    #hideSidebar:hover {
+        background: #fff;
+        color: $green;
+        border: 2px $green solid;
+    }
+
+    #sidebarBtn2 { /* Create Post */
+        border: 2px $green solid;
+        border-radius: 1px;
+        background: $green;
+        color: $green-mint;
+        font-weight: bold;
+        width: 100%;
+    }
+
+    #sidebarBtn2:hover {
+        background: #fff;
+        color: $green;
+        border: 2px $green solid;
+    }
 }

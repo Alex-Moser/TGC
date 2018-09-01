@@ -2,6 +2,8 @@
 /*main*/
 /*Violet*/
 /*Red*/
+/*Blue*/
+/*cyan*/
 /*green*/
 /*greyscale*/
 /*Font Variables*/
@@ -46,6 +48,8 @@
 /*main*/
 /*Violet*/
 /*Red*/
+/*Blue*/
+/*cyan*/
 /*green*/
 /*greyscale*/
 /*Font Variables*/
@@ -59,7 +63,7 @@ div.card-c {
 /* post container */
 .post-index-c {
   padding-top: 1em;
-  background: #faf9fa;
+  background: #fcfdfc;
 }
 
 /* Card for each post */
@@ -139,6 +143,8 @@ div.card-c {
 /*main*/
 /*Violet*/
 /*Red*/
+/*Blue*/
+/*cyan*/
 /*green*/
 /*greyscale*/
 /*Font Variables*/
@@ -184,7 +190,7 @@ div.card-c {
 
 /* Bright Green button white color */
 .btn-green-bright-o {
-  color: #116611;
+  color: #0a3a0a;
   background: #fff;
   border: #6b006b 1px solid;
 }
@@ -314,7 +320,7 @@ div.card-c {
 }
 
 .btn-white-g:hover {
-  background: #2ede2e;
+  background: #1AA61A;
   color: #fff;
 }
 
@@ -326,6 +332,8 @@ div.card-c {
 /*main*/
 /*Violet*/
 /*Red*/
+/*Blue*/
+/*cyan*/
 /*green*/
 /*greyscale*/
 /*Font Variables*/
@@ -341,38 +349,8 @@ div.card-c {
     left: 0;
     width: 14em;
     height: 100%;
-    background: #fff;
-  }
-
-  /* Sidebar Buttons */
-  div.sidebar-btn-group {
-    padding-bottom: 1em;
-  }
-
-  /* Hides right arrow icon, it's
-      toggled in sidebar.js from there. */
-  span.sidebar-btn-icon > i.fa-angle-right {
-    opacity: 0;
-  }
-
-  #hideSidebar {
-    /* Hide */
-    border: 1px #1AA61A outset;
-    color: #1fc81f;
-    border-radius: 1px;
-    background: #fff;
-    font-weight: bold;
-    width: 100%;
-  }
-
-  #sidebarBtn2 {
-    /* Create Post */
-    border: 1px #1fc81f outset;
-    border-radius: 1px;
-    background: #1fc81f;
-    color: #fff;
-    font-weight: bold;
-    width: 100%;
+    background: #ebffeb;
+    border-right: 1px #005959 solid;
   }
 
   /* Makes custom price range inputs
@@ -392,19 +370,26 @@ div.card-c {
     padding-top: 4em;
   }
 
+  div.filter-options-wrapper {
+    overflow-y: scroll;
+    padding-top: 1em;
+  }
+
   /* Spaces out filter sections */
-  div.filter-section {
+  div.filter-section, .dropdown-wrapper {
+    color: #005959;
     padding-bottom: 2em;
   }
 
   /* Title of the set of filters */
   #filterLegend {
-    font-size: 1.5em;
+    font-size: 1.7em;
     background: #fff;
-    border: #ebebeb 1px solid;
     border-radius: 3px;
     text-align: center;
-    margin-bottom: 1em;
+    margin-bottom: 0.5em;
+    color: #005959;
+    background: #d9f9d9;
   }
 
   #filterFieldset {
@@ -412,10 +397,6 @@ div.card-c {
   }
 
   /* Makes the price range numbers a better font for numbers */
-  input[name=priceRadios] ~ label {
-    font-family: "Roboto", sans-serif;
-  }
-
   /* Insures dropdown input is on new line */
   label.select-label {
     display: block;
@@ -423,6 +404,7 @@ div.card-c {
 
   /* Title of each filter */
   label.filter-label, p.filter-label {
+    color: #005959;
     margin-bottom: 3px;
     font-size: 1.2em;
     padding-left: 1em;
@@ -433,11 +415,128 @@ div.card-c {
     margin-left: 2em;
     font-size: 0.9em;
   }
+
+  /*********************************************************
+  *************CUSTOM DROPDOWNS ***************************
+  *********************************************************/
+  /*Dropdown wrapper */
+  div.dropdown-wrapper {
+    padding-bottom: 1em;
+    width: 100%;
+  }
+
+  /*Clickable top portion */
+  div.custom-dropdown {
+    z-index: 0;
+    border: 1px #85ec85 solid;
+    box-shadow: 0 0 1px #5c5c5c;
+    border-radius: 5px;
+    height: 33px;
+    width: 9em;
+    margin-left: 2em;
+    /*centers dropdown */
+    padding-top: 3px;
+    /* vertically centers text and icon */
+    position: relative;
+    /* necessary since pos: absolute used on menu */
+    background: linear-gradient(#006d6d, #005959);
+  }
+
+  /* Title on dropdown itself */
+  p.dropdown-title {
+    color: #85ec85;
+    display: inline;
+    margin-left: 0.5em;
+  }
+
+  i.fa-angle-down {
+    margin-top: 2px;
+    margin-left: 3.5em;
+    background: transparent;
+    color: #85ec85;
+  }
+
+  /*Menu*/
+  div.select-option-wrapper {
+    z-index: 1;
+    height: 150px;
+    width: 9em;
+    margin-left: 2em;
+    position: absolute;
+    background: linear-gradient(#fff, #ebffeb);
+    overflow-y: scroll;
+    display: none;
+    border: 1px #00d9d9 solid;
+  }
+
+  div.select-option-wrapper.menu-visible {
+    display: block;
+  }
+
+  div.dropdown-check-wrapper {
+    margin-left: 1em;
+    font-size: 0.9em;
+    color: #006d6d;
+  }
+
+  p.standard-clubs {
+    color: #005959;
+    margin-bottom: 0;
+    padding-left: 3px;
+    padding-top: 3px;
+  }
+
+  /********************************************************
+  ***************SIDEBAR BUTTONS***************************
+  **********************************************************/
+  div.sidebar-btn-wrapper {
+    padding-bottom: 1em;
+  }
+
+  /* Hides right arrow icon, it's
+      toggled in sidebar.js from there. */
+  span.sidebar-btn-icon > i.fa-angle-right {
+    opacity: 0;
+  }
+
+  #hideSidebar {
+    /* Hide */
+    border: 2px #005959 solid;
+    color: #85ec85;
+    border-radius: 1px;
+    background: #005959;
+    font-weight: bold;
+    width: 100%;
+  }
+
+  #hideSidebar:hover {
+    background: #fff;
+    color: #1AA61A;
+    border: 2px #1AA61A solid;
+  }
+
+  #sidebarBtn2 {
+    /* Create Post */
+    border: 2px #1AA61A solid;
+    border-radius: 1px;
+    background: #1AA61A;
+    color: #d9f9d9;
+    font-weight: bold;
+    width: 100%;
+  }
+
+  #sidebarBtn2:hover {
+    background: #fff;
+    color: #1AA61A;
+    border: 2px #1AA61A solid;
+  }
 }
 /*Color variables*/
 /*main*/
 /*Violet*/
 /*Red*/
+/*Blue*/
+/*cyan*/
 /*green*/
 /*greyscale*/
 /*Font Variables*/
@@ -445,31 +544,33 @@ div.card-c {
 /*main*/
 /*Violet*/
 /*Red*/
+/*Blue*/
+/*cyan*/
 /*green*/
 /*greyscale*/
 /*Font Variables*/
 nav.my-navbar {
-  border-bottom: 1px solid #cccccc;
+  background: linear-gradient(#005959, #003f3f);
+  border-radius: 0;
 }
 
 /* TheGolfClub/TGC */
 #brand {
-  font-weight: bold;
-  color: #1fc81f;
+  color: #85ec85;
 }
 
 /* the word Club in the logo */
 #logoClub {
-  color: #1AA61A;
+  color: #8CC21F;
 }
 
 /* the word The in the logo */
 #logoThe {
-  color: #41e141;
+  color: #d9f9d9;
 }
 
 #backArrow {
-  color: #1fc81f;
+  color: #8CC21F;
 }
 
 #logout {
@@ -480,7 +581,7 @@ nav.my-navbar {
 #register,
 #createPost,
 #myProfile {
-  color: #41e141;
+  color: #85ec85;
 }
 
 /* Hides square around back button icon */

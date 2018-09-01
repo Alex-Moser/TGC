@@ -2,27 +2,27 @@
 
 
 nav.my-navbar {
-    border-bottom: 1px solid $grey-l2;
+    background: linear-gradient($cyan, $cyan-d);
+    border-radius: 0;
 }
 
 /* TheGolfClub/TGC */
 #brand {
-    font-weight: bold;
-    color: $green-l;
+    color: $green-l3;
     // font-size: 1.6em;
 }
 /* the word Club in the logo */
 #logoClub {
-    color: $green;
+    color: $yellow-green;
 }
 /* the word The in the logo */
 #logoThe {
-    color: $green-l2;
+    color: $green-mint;
 }
 
 
 #backArrow {
-    color: $green-l;
+    color: $yellow-green;
 }
 
 #logout {
@@ -33,7 +33,7 @@ nav.my-navbar {
 #register,
 #createPost,
 #myProfile {
-    color: $green-l2;
+    color: $green-l3;
 }
 
 /* Hides square around back button icon */
